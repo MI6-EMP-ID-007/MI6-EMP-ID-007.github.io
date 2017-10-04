@@ -1,0 +1,29 @@
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Mini Posts -->
+							<section>
+								<div class="mini-posts">
+									{% for post in site.posts limit:4 %}
+										{% include miniPost.html %}
+									{% endfor %}
+								</div>
+							</section>
+
+						<!-- Posts List -->
+							<section>
+								<ul class="posts">
+									{% for post in site.posts limit:8 %}
+										{% include postlist.html %}
+									{% endfor %}
+								</ul>
+							</section>
+
+						<!-- About -->
+							<section class="blurb">
+								<h2>About</h2>
+								<p>The Aim of Casinocademy is to teach, educate and help fellow online casino players when it comes to the ins, outs and arounds of gambling online. With us you will stay on top of your game and have a real Chance of winning big.</p>
+								<ul class="actions">
+									<li><a href="/about.html" class="button">Learn More</a></li>
+								</ul>
+							</section>

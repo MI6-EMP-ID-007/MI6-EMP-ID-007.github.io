@@ -1,0 +1,32 @@
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+										<p>{{post.subtitle}}</p>
+									</div>
+									<div class="meta">
+										<!-- Post Date Stamp -->
+										<time class="published" datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+										<!-- Author Metadata (Name, Img, Link) -->
+										{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
+										<a href="#" class="author">
+										<span class="name">{{ post.author }}</span>
+										<img src={{ authorImg | relative_url}} alt="{{post.author}}" /></a>
+									</div>
+                                </header>
+                                {% assign headerImg = 'images/' | append:post.headerImg %}
+	                            <a href="{{ post.url }}" class="image featured">
+                                <img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
+                                <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+                                
+                                <footer>
+									<ul class="actions">
+										<li><a href="{{ post.url }}" class="button big">Continue Reading</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon fa-heart">28</a></li>
+										<li><a href="#" class="icon fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>

@@ -1,0 +1,13 @@
+<article class="mini-post">
+    <header>
+		<h3><a href="{{ post.url }}">{{post.title}}</a></h3>
+		<!-- Post Date Stamp -->
+		<time class="published" datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+		<!-- Author Img -->
+		{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
+		<a href="{{ post.url }}" class=author><img img src={{ authorImg | relative_url}} alt="Thulani Mbatha"></a>
+	</header>
+	{% assign headerImg = 'images/' | append:post.headerImg %}
+	<a href="{{ post.url }}" class="image">
+	<img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
+</article>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ page.title }} | {{ site.title }}</title>
+		{% include head.html %}   
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				
+				<!-- header -->
+                	{% include header.html %}
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							{% assign pageNumber = 1 %}
+							{% assign offset = 4 %}
+							
+							<section class="page0" style="display:block;">
+								{% for post in site.posts limit:4 %}
+									{% include postPreview.html %}
+								{% endfor %}
+							</section>
+
+							{% assign totalPageNumber = site.posts.size | divided_by: 4 | ceil %}
+							{% for page in (1..totalPageNumber) %}
+								<section class="page{{pageNumber}}" style="display:none;">
+									{% for post in site.posts limit:4 offset:offset %}
+										{% include postPreview.html %}
+									{% endfor %}
+								</section>
+								{% assign offset = offset | plus: 4 %}
+								{% assign pageNumber = pageNumber | plus: 1 %}
+							{% endfor %}
+
+
+								<script>
+								$(document).ready(function(){
+									var currentPageNumber = 0
+									var nextPageNumber = 1
+									var previousPageNumber = -1
+									var totalPageNumber = {{totalPageNumber}}-1
+									var endPageNumber = {{totalPageNumber}}
+									var state = {selectedPage: currentPageNumber}
+									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
+									console.log(state, currentPageNumber, endPageNumber)
+									$(window).on('popstate', function(event) {
+    									var state = event.originalEvent.state
+
+    									if (state) {
+											console.log(state, currentPageNumber, endPageNumber)
+											if (state.selectedPage == currentPageNumber-1){
+												$('.page' + currentPageNumber).css("display", "none");
+												$('.page' + previousPageNumber).css("display", "block");;
+												if (currentPageNumber-1 < endPageNumber ){
+													document.getElementById("nextButton").className = "button big next";}
+												nextPageNumber -= 1;
+												currentPageNumber -= 1;
+												previousPageNumber -= 1;
+												window.scrollTo(0,0);
+												if (currentPageNumber == 0){
+													document.getElementById("backButton").className = "disabled button big previous";
+												}
+											}
+											else{
+												$('.page' + currentPageNumber).css("display", "none");
+												$('.page' + nextPageNumber).css("display", "block");
+												nextPageNumber += 1
+												currentPageNumber += 1
+												previousPageNumber += 1
+												window.scrollTo(0,0);
+												if (currentPageNumber > 0){
+													document.getElementById("backButton").className = "button big previous"}
+												if (currentPageNumber == endPageNumber ){
+												document.getElementById("nextButton").className = "disabled button big next";}
+											}
+									}
+									})
+
+									$("#nextButton").click(function() {
+										$('.page' + currentPageNumber).css("display", "none");
+										$('.page' + nextPageNumber).css("display", "block");
+										
+									if (currentPageNumber < totalPageNumber ){
+										nextPageNumber += 1
+										currentPageNumber += 1
+										previousPageNumber += 1
+										window.scrollTo(0,0);
+									}
+									else {
+										nextPageNumber = endPageNumber+1
+										currentPageNumber = endPageNumber
+										previousPageNumber = endPageNumber-1
+										window.scrollTo(0,0);
+										document.getElementById("nextButton").className = "disabled button big next";
+										}
+									var state = {selectedPage: currentPageNumber}
+									console.log(state, currentPageNumber, endPageNumber)
+									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
+									if (currentPageNumber > 0){
+										document.getElementById("backButton").className = "button big previous"}
+									});
+
+									$("#backButton").click(function() {
+										$('.page' + currentPageNumber).css("display", "none");
+										$('.page' + previousPageNumber).css("display", "block");
+										
+										if (currentPageNumber > 1){
+											nextPageNumber -= 1;
+											currentPageNumber -= 1;
+											previousPageNumber -= 1;
+											window.scrollTo(0,0);
+										}
+										else {
+											nextPageNumber = 1;
+											currentPageNumber = 0;
+											previousPageNumber = -1;
+											window.scrollTo(0,0);
+											document.getElementById("backButton").className = "disabled button big previous";
+										}
+										var state = {selectedPage: currentPageNumber}
+										console.log(state, currentPageNumber, endPageNumber)
+										history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
+										if (currentPageNumber < totalPageNumber ){
+											document.getElementById("nextButton").className = "button big next";}
+									});
+								});
+								</script>
+
+
+						<!-- Pagination -->
+							<ul class="actions pagination">
+								<li><a id="backButton" class="disabled button big previous">Previous Page</a></li>
+								<li><a id="nextButton" class="button big next">Next Page</a></li>
+							</ul>
+
+					</div>
+
+				<!-- Sidebar-->
+
+					<!-- Intro -->
+					<section id="sidebar">
+						<section id="intro">
+							<a href="/index.html" class="logo"><img src="images/placeholder-logo.jpg" alt="" /></a>
+							<header>
+								<h2><a href="/index.html">Casinocademy</a></h2>
+								<p>You number one stop for online Casino Tips, Tricks and Hacks</p>
+							</header>
+						</section>
+					
+						{% include sidebar.html %}
+					</section>
+				<!-- Footer -->
+					{% include footer.html %}
+
+			</div>
+	</body>
+</html>

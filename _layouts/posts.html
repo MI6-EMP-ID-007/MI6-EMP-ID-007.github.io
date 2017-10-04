@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ page.title }} | {{ site.title }}</title>
+		{% include head.html %}
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- header -->
+					{% include header.html %}
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>{{ page.title }}</h2>
+										<p>{{page.subtitle | textilize}}</p>
+									</div>
+									<div class="meta">
+										<!-- Post Date Stamp -->
+										<time class="published" datetime="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+										<!-- Author Metadata (Name, Img, Link) -->
+										{% assign authorImg = 'images/Authors/' | append:page.author | append:".jpg" %}
+										<a href="#" class="author">
+										<span class="name">{{ page.author }}</span>
+										<img src="{{ authorImg | relative_url}}" alt="{{page.author}}" /></a>
+									</div>
+								</header>
+								{%- assign headerImg = 'images/' | append:page.headerImg -%}
+								<span class="image featured">
+								<img src={{ headerImg | relative_url}} alt="{{page.title}}" /></span>
+								<p>{{ content }}</p>
+								
+								<footer>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon fa-heart">28</a></li>
+										<li><a href="#" class="icon fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Sidebar-->
+					{% include sidebar.html %}
+
+				<!-- Footer -->
+					{% include footer.html %}
+
+			</div>
+	</body>
+</html>
