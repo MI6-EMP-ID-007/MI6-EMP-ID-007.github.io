@@ -1,3 +1,4 @@
 name: Tutorial Jekyll Website
 title: casinotips.com
 excerpt_separator: <!--more-->
+permalink: /404.html
