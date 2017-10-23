@@ -9,8 +9,6 @@ subtitle: |
 
 There are heaps of online Casinos out there and finding the one that is just right for you is no easy task. One of the first things new players are immediately confronted with when opening an online Casino website is that casinos opening offer.
 
-[Excerpt Seperator]
-
 This welcome Bonus is usually quite large and it allows players to gauge how much an online casino is willing to invest into it's potential customers right from the get go. I know that one should not judge a book by it's cover, but we are not judging books here. We are judging online Casinos and one of the hard truths of this business is that if they can't make you a good welcome offer then they probably do not have much else to offer you.
 
 So it is very important to look for a casino that offers you a good deal. And I mean a good deal for you. The kind of welcome bonus that a casino offers it's players is indicative of the kind of player it is trying to attract. Not all casinos are the same and that is good because not all players play the same way.
