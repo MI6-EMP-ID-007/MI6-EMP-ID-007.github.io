@@ -15,7 +15,7 @@
 									</div>
                                 				</header>
 								
-                                				% assign headerImg = 'images/' | append:post.headerImg %}
+                                				{% assign headerImg = 'images/' | append:post.headerImg %}
 	                            				<a href="{{ post.url }}" class="image featured">
                                 				<img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
                                 				{{ post.excerpt }}
