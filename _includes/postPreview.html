@@ -13,13 +13,14 @@
 										<span class="name">{{ post.author }}</span>
 										<img src={{ authorImg | relative_url}} alt="{{post.author}}" /></a>
 									</div>
-                                </header>
-                                {% assign headerImg = 'images/' | append:post.headerImg %}
-	                            <a href="{{ post.url }}" class="image featured">
-                                <img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
-                                <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+                                				</header>
+								
+                                				% assign headerImg = 'images/' | append:post.headerImg %}
+	                            				<a href="{{ post.url }}" class="image featured">
+                                				<img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
+                                				{{ post.excerpt }}
                                 
-                                <footer>
+                                				<footer>
 									<ul class="actions">
 										<li><a href="{{ post.url }}" class="button big">Continue Reading</a></li>
 									</ul>
