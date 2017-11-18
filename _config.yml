@@ -1,3 +1,5 @@
 name: Tutorial Jekyll Website
 title: casinotips.com
 excerpt_separator: <!--more-->
+plugins:
+  - jekyll-redirect-from
