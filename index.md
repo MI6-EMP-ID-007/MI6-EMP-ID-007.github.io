@@ -1,6 +1,8 @@
 ---
 title: Casinotips
 layout: homepage
+redirect_from:
+        - /page0.html
 ---
 
 # {{ page.title }}

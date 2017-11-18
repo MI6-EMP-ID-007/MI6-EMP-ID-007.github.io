@@ -3246,11 +3246,10 @@
 
 	#intro .logo {
 		border-bottom: 0;
-		display: inline-block;
-		margin: 0 0 1em 0;
+		display: block;
+		margin: 0 0 -0.5em 0;
 		overflow: hidden;
 		position: relative;
-		width: 4em;
 	}
 
 		#intro .logo:before {
@@ -3269,8 +3268,8 @@
 
 		#intro .logo img {
 			display: block;
-			margin-left: -0.25em;
-			width: 4.5em;
+			width: 8em;
+			margin: auto;
 		}
 
 	#intro header h2 {

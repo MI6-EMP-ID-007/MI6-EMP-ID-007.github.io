@@ -1,0 +1,11 @@
+---
+layout: posts
+title: The Ace of Games!
+author: Thulani Mbatha
+headerImg: Casino.jpg
+subtitle: |
+    One Game will take the golden throne, will it be this one?
+---
+
+Meet Immortal Romance
+Best games across the Casino industry
