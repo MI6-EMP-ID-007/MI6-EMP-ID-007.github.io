@@ -2,7 +2,7 @@
 layout: posts
 title: Most popular Casinos
 author: Thulani Mbatha
-headerImg: meditation.jpg
+headerImg: bestCasino.jpg
 subtitle: |
     You number one stop for online Casino Tips, Tricks and Hacks
 ---
