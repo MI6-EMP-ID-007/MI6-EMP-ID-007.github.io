@@ -1,8 +1,18 @@
 				<!-- Sidebar -->
 					<section id="sidebar">
-
+							<section id="intro">
+									<a href="/index.html" class="logo"><img src={{"images/CasinocademyLogo.png" | relative_url}} alt="CasinocademyLogo" /></a>
+									<header>
+										<h2><a href="/index.html">Casinocademy</a></h2>
+										<p>You number one stop for online Casino Tips, Tricks and Hacks</p>
+									</header>
+								</section>
 						<!-- Mini Posts -->
 							<section>
+								<header>
+									<h2> Most Popular</h2>
+									<p id="main"> Our Top Posts as voted for by you</p>
+								</header>
 								<div class="mini-posts">
 									{% for post in site.posts limit:4 %}
 										{% include miniPost.html %}
@@ -12,6 +22,10 @@
 
 						<!-- Posts List -->
 							<section>
+								<header>
+									<h2>Recent Posts</h2>
+									<p id="main"> New Material to keep you winning!</p>
+								</header>
 								<ul class="posts">
 									{% for post in site.posts limit:8 %}
 										{% include postlist.html %}
