@@ -1,5 +1,5 @@
-name: Tutorial Jekyll Website
-title: casinotips.com
+name: Casinocademy Website
+title: casinocademy.com
 excerpt_separator: <!--more-->
 plugins:
   - jekyll-redirect-from
