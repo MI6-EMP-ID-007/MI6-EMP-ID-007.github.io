@@ -513,7 +513,6 @@ Best games across the Casino industry</p>
 
 						<!-- On page Pagination Script -->
 								<script>
-								
 								$(document).ready(function(){
 									var currentPageNumber = 0
 									var nextPageNumber = 1
@@ -527,6 +526,7 @@ Best games across the Casino industry</p>
     									var state = event.originalEvent.state
 
     									if (state) {
+											console.log(state, currentPageNumber, endPageNumber)
 											if (state.selectedPage == currentPageNumber-1){
 												$('.page' + currentPageNumber).css("display", "none");
 												$('.page' + previousPageNumber).css("display", "block");;
@@ -573,6 +573,7 @@ Best games across the Casino industry</p>
 										document.getElementById("nextButton").className = "disabled button big next";
 										}
 									var state = {selectedPage: currentPageNumber}
+									console.log(state, currentPageNumber, endPageNumber)
 									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
 									if (currentPageNumber > 0){
 										document.getElementById("backButton").className = "button big previous"}
@@ -598,12 +599,13 @@ Best games across the Casino industry</p>
 										var state = {selectedPage: currentPageNumber}
 										console.log(state, currentPageNumber, endPageNumber)
 										history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
-										if (currentPageNumber < totalPageNumber ){
+										if (currentPageNumber == totalPageNumber ){
 											document.getElementById("nextButton").className = "button big next";}
 									});
 								});
 								</script>
-								
+
+
 						<!-- Pagination -->
 							<ul class="actions pagination">
 								<li><a id="backButton" class="disabled button big previous">Previous Page</a></li>
