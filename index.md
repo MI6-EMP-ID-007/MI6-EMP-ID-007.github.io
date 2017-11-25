@@ -1,5 +1,5 @@
 ---
-title: Casinotips
+title: No. 1 Casino Academy
 layout: homepage
 redirect_from:
         - /page0.html
