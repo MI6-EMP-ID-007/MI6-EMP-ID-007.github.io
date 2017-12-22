@@ -9,6 +9,7 @@ subtitle: |
 
 <h2>One Game will receive the grand title, we’ll tell you which one!</h2>
 
+Almost everybody knows that out of the thousands of Games on the Net some are more popular and pay out more wins. We have decided to set out and take it upon ourselves to find the best onlince Casino game in the world. Why would we try to tackle such a monumental task you ask? Read on and find out…
 <!--more-->
 Well, for one this journey gives us the opportunity to review a whole host of great games in a more in-depth manner thus allowing us to find out if these games deserve their popularity and their status as money makers. Another reason is that we get to examine the different models, online casinos and Software providers use to entice players and compare the results.
 
