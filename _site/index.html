@@ -44,7 +44,7 @@
 		<!-- End Google Tag Manager -->
 			
 
-		<meta name="description" content=" The Number 1 Casino Academy! All you need to know about the Casino Bonuses, online Casinos and how to win big!">
+		<meta name="description" content="The Number 1 Casino Academy! All you need to know about the Casino Bonuses, The best online Casinos and how to win big!">
 		<meta name="keywords" content="Online, Casino, Big Wins, Bonus, Best Casinos, Real wins, learn to play better, best, free, best games, strategy,">
 		<meta name="author" content="Casinocademy team">
 	</head>
@@ -60,7 +60,7 @@
 				
 				<!-- header -->
                 						<header id="header">
-						<h1><a href="/index.html">Casinocademy(Beta)</a></h1>
+						<h1><a href="http://www.casinocademy.com/page0.html">Casinocademy(Beta)</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="/comingSoon">Casino Rankings</a></li>
@@ -170,7 +170,10 @@
                                 				
 	                            				<a href="/2017/09/06/The-Ace-of-Games.html" class="image featured">
                                 				<img src=/images/theAceOfGamesGeneric.jpg alt="The Ace of Games"></a>
-                                				<p>Which game is the best Online Casino game? Read on and find out.</p>
+                                				<h2>One Game will receive the grand title, we’ll tell you which one!</h2>
+
+<p>Out of the thousands of Games on the Net some are more popular and more well regarded by players across the world. We have decided to set out and tackle a truly gigantic task. We will attempt to determine which of the thousands of online casino games are the best. Why would we try to tackle such a monumental task you ask? Read on and find out…</p>
+
 
                                 
                                 				<footer>
@@ -511,9 +514,11 @@ Best games across the Casino industry</p>
 								
 							
 
-						<!-- On page Pagination Script -->
+							
+						<!-- On page Pagination Script. Explanation why the below script is necessary. Because I did not feel like figuring out how to make jekyll generate a million pages based on the number of posts my blog has, I decided to write single page pagination. I later realized that this poses a problem with finding ones spot because the URL doesnt change, so I extended the script to update the URL, i then realized that pushing a URL to the browser history poses a problem because when it is shared or re-used later it throws a 404 error so i decided to redirect all URLs to the homepage, but this causes one to go back to page 0, so i extended the script to move the reader to the correct page based on the referrer page. All in all it was a lot more work than just generating new pages.-->
 								<script>
-								$(document).ready(function(){
+								$(document).ready(function(){										
+									/* Script to make buttons work*/		
 									var currentPageNumber = 0
 									var nextPageNumber = 1
 									var previousPageNumber = -1
@@ -521,12 +526,14 @@ Best games across the Casino industry</p>
 									var endPageNumber = 2
 									var state = {selectedPage: currentPageNumber}
 									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
-									console.log(state, currentPageNumber, endPageNumber)
+									
+									
+
 									$(window).on('popstate', function(event) {
     									var state = event.originalEvent.state
 
     									if (state) {
-											console.log(state, currentPageNumber, endPageNumber)
+											
 											if (state.selectedPage == currentPageNumber-1){
 												$('.page' + currentPageNumber).css("display", "none");
 												$('.page' + previousPageNumber).css("display", "block");;
@@ -573,7 +580,7 @@ Best games across the Casino industry</p>
 										document.getElementById("nextButton").className = "disabled button big next";
 										}
 									var state = {selectedPage: currentPageNumber}
-									console.log(state, currentPageNumber, endPageNumber)
+									
 									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
 									if (currentPageNumber > 0){
 										document.getElementById("backButton").className = "button big previous"}
@@ -597,11 +604,39 @@ Best games across the Casino industry</p>
 											document.getElementById("backButton").className = "disabled button big previous";
 										}
 										var state = {selectedPage: currentPageNumber}
-										console.log(state, currentPageNumber, endPageNumber)
+										
 										history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
 										if (currentPageNumber == totalPageNumber ){
 											document.getElementById("nextButton").className = "button big next";}
 									});
+								
+
+									/* Script to move to correct page based on page number of pre-redirect URL.*/
+										// Proper explanation of how it works will be in version notes
+										URLPageNumber = document.referrer //finds pre redirect URL
+											//checks if URL is correct then checks length to see if its 1 or 2 digit number, finds the digits and compiles the page number
+											if (URLPageNumber.search("http://localhost:4000/page") >= 0 || URLPageNumber.search("http://casinocademy.com/page") >= 0) {
+												if (URLPageNumber.length==34 || URLPageNumber.length==32 ) {
+													for (i = 0; i <endPageNumber ; i++){
+													}
+													realPageNumber = URLPageNumber[URLPageNumber.length - 6]
+												}
+												else if (URLPageNumber.length==35 || URLPageNumber.length==33) {
+													tempNumber = URLPageNumber[URLPageNumber.length - 7]
+													tempNumber2 = URLPageNumber[URLPageNumber.length - 6]
+													realPageNumber = tempNumber.concat(tempNumber2)
+												}
+												//error message if there's a problem with parsing the page number
+												else {"ERROR - please enter a URL with a valid page number"}
+												//move to real page number
+												for (i = 0; i < realPageNumber; i++){
+													document.getElementById("nextButton").click();
+												}
+											}
+											//error message if problem with URL that is not 404	
+											else {
+												console.log("ERROR - please enter a valid URL")
+											};
 								});
 								</script>
 
@@ -620,9 +655,9 @@ Best games across the Casino industry</p>
 										<!-- Sidebar -->
 					<section id="sidebar">
 							<section id="intro">
-									<a href="/index.html" class="logo"><img src=/images/CasinocademyLogo.png alt="CasinocademyLogo" /></a>
+									<a href="http://www.casinocademy.com/page0.html" class="logo"><img src=/images/CasinocademyLogo.png alt="CasinocademyLogo" /></a>
 									<header>
-										<h2><a href="/index.html">Casinocademy</a></h2>
+										<h2><a href="http://www.casinocademy.com/page0.html">Casinocademy</a></h2>
 										<p>You number one stop for online Casino Tips, Tricks and Hacks</p>
 									</header>
 								</section>
