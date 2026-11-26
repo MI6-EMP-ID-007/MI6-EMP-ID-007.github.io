@@ -132,7 +132,7 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 ### Low: content polish and housekeeping
 
 - [ ] 54. The repo is public, but the README says "unauthorized distribution prohibited" and there is no LICENSE file. Pick one.
-- [ ] 55. The author photo is the same image under the new name (`images/Authors/Andrew Morris.jpg`). Swap in the right image if needed.
+- [ ] 55. Andrew Morris now uses a generated "AM" initials avatar (`images/Authors/andrew-morris.svg`). Swap in a real image when one is found. The old `Andrew Morris.jpg` is still in the repo, unused.
 - [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist).
 - [ ] 57. No affiliate or advertising disclosure. Needed before rankings go live.
 - [ ] 58. No CAA DNS record. Optional hardening.
