@@ -9,7 +9,7 @@
 										<time class="published" datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 										<!-- Author Metadata (Name, Img, Link) -->
 										{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
-										<a href="#" class="author">
+										<a href="{{ '/authors' | relative_url }}#{{ post.author | slugify }}" class="author">
 										<span class="name">{{ post.author }}</span>
 										<img src={{ authorImg | relative_url}} alt="{{post.author}}" /></a>
 									</div>

@@ -5,16 +5,17 @@
 								<li><a href="/comingSoon">Casino Rankings</a></li>
 								<li><a href="/comingSoon">Bonus Rankings</a></li>
 								<li><a href="/blog">Blog</a></li>
-								<li><a href="/comingSoon">Authors</a></li>
+								<li><a href="/authors">Authors</a></li>
 								<li><a href="/about">About</a></li>
+								<li><a href="/contact">Contact</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
 							<ul>
 								<li class="search">
 									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Currently Disabled" />
+									<form id="search" method="get" action="#" data-search data-search-mount="floating" data-search-index="{{ '/search.json' | relative_url }}">
+										<input type="text" name="query" placeholder="Search posts…" aria-label="Search the site" autocomplete="off" />
 									</form>
 								</li>
 								<li class="menu">
@@ -28,8 +29,8 @@
 					<section id="menu">
 						<!-- Search -->
 							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Currently Disabled" />
+								<form class="search" method="get" action="#" data-search data-search-index="{{ '/search.json' | relative_url }}">
+									<input type="text" name="query" placeholder="Search posts…" aria-label="Search the site" autocomplete="off" />
 								</form>
 							</section>
 
@@ -37,13 +38,13 @@
 							<section>
 								<ul class="links">
 									<li>
-										<a href="#">
+										<a href="/comingSoon">
 											<h3>Casino Rankings</h3>
 											<p>Casino Rankings are updated monthly. The Webs best casinos are ranked here.</p>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="/comingSoon">
 											<h3>Bonus rankings</h3>
 											<p>The newest and most profitable Casino Bonuses are displayed here.</p>
 										</a>
@@ -55,7 +56,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="/authors">
 											<h3>Authors</h3>
 											<p>Get to know the industry proffesionals that write for us.</p>
 										</a>
@@ -66,13 +67,12 @@
 											<p>Why this Website exists and what we are trying to achieve.</p>
 										</a>
 									</li>
-								</ul>
-							</section>
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions vertical">
-									<li><a href="#" class="button big fit">Log In</a></li>
+									<li>
+										<a href="/contact">
+											<h3>Contact</h3>
+											<p>Questions, feedback or ideas? Send us a message.</p>
+										</a>
+									</li>
 								</ul>
 							</section>
 

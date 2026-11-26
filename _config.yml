@@ -3,3 +3,5 @@ title: casinocademy.com
 excerpt_separator: <!--more-->
 plugins:
   - jekyll-redirect-from
+exclude:
+  - issues.md

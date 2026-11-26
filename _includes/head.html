@@ -2,6 +2,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 			<link rel="stylesheet" href={{"assets/css/main.css" | relative_url}} />
+			<link rel="stylesheet" href={{"assets/css/custom.css" | relative_url}} />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 			<link rel="shortcut icon" type="image/x-icon" href={{"favicon.ico" | relative_url}}/>
@@ -11,15 +12,10 @@
 			<script src={{"assets/js/util.js" | relative_url}}></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src={{"assets/js/main.js" | relative_url}}></script>
+			<script src={{"assets/js/search.js" | relative_url}} defer></script>
 		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110009508-1"></script>
-			<script>
-  				window.dataLayer = window.dataLayer || [];
-  				function gtag(){dataLayer.push(arguments);}
-  				gtag('js', new Date());
-  				gtag('config', 'UA-110009508-1');
-			</script>
+		{% comment %}Analytics: the old Universal Analytics tag (UA-110009508-1) was removed, Google stopped
+		     processing UA data in 2023. Configure GA4 inside Google Tag Manager (container below).{% endcomment %}
 
 		<!-- Google Tag Manager -->
 			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

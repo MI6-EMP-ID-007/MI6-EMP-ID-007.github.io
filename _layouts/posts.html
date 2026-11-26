@@ -33,7 +33,7 @@
 										<time class="published" datetime="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
 										<!-- Author Metadata (Name, Img, Link) -->
 										{% assign authorImg = 'images/Authors/' | append:page.author | append:".jpg" %}
-										<a href="#" class="author">
+										<a href="{{ '/authors' | relative_url }}#{{ page.author | slugify }}" class="author">
 										<span class="name">{{ page.author }}</span>
 										<img src="{{ authorImg | relative_url}}" alt="{{page.author}}" /></a>
 									</div>

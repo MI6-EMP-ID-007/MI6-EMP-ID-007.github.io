@@ -1,0 +1,16 @@
+# Authors shown on /authors.
+# `name` must match the `author:` value used in post front matter exactly.
+# `photo` is relative to /images/.
+- name: Andrew Morris
+  photo: Authors/Andrew Morris.jpg
+  role: Lead Writer
+  bio:
+    - Andrew writes the guides, bonus breakdowns and game reviews that make up most of Casinocademy, from the Best Bonuses roundup to the King of Deposits series and the Ace of Games reviews.
+    - His approach is simple. Explain how online casinos actually work, test the details instead of repeating the marketing, and give players the information they need to get the most out of their time and money.
+
+- name: Abigail Benson
+  photo: Authors/abigail-benson.svg
+  role: Contributing Writer
+  bio:
+    - Abigail is a contributing writer at Casinocademy. She focuses on helping newer players understand the basics, from how welcome offers are structured to what to look for before signing up with a casino.
+    - Her first articles will appear here soon.
