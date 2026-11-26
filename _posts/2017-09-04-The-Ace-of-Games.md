@@ -1,20 +1,35 @@
 ---
 layout: posts
-title: The Ace of Games!
+title: "The Ace of Games: Meet the Contenders"
 author: Andrew Morris
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
-    One Game will be crowned as the undisputed winner amongst the Games. Will it be this one?
+    The games, grouped by software provider, that will compete for the crown.
 ---
 
-At Casinotips.com we are always scheming and planning. It is a well known fact that some games just seem to pay better than others. Some games are incredibly popular while other Casinogames are like the kid that always gets picked last. But fear not we are here to help you find the best games on the net.
+Many players have a favourite casino, and most casinos stock games from a handful of software providers. So we have grouped our contenders by provider. You can see at a glance which games to look for at your usual casino.
 
 <!--more-->
 
-But you can't even feel sorry for those games because they brought it on themselves by stealing your hard earned cash out from right under your nose. All you ever get to see when placing bets at these games is a big fat zero. So we have gone the extra mile and combined our extensive personal experience of gambling with some hard industry data to bring you the most popular (and therefore surely the most profitable) casinogames of all times.
+**Microgaming**
 
-Meet Thunderstruck II
+- **Thunderstruck II.** A Norse mythology slot with 243 ways to win. Its bonus round, the Great Hall of Spins, unlocks new features the more often you reach it.
+- **Immortal Romance.** A vampire love story with 243 ways to win and a bonus round built around its four main characters. Read more in our [Spotlight on Immortal Romance]({% post_url 2017-09-05-The-Ace-of-Games %}).
+- **Mega Moolah.** A progressive jackpot slot. A slice of every bet feeds a jackpot that can grow into a life-changing sum, which puts it in a category of its own.
 
-Due to the fact that many players have a favorite go to casino that usually stocks games from a certain provider we have split the games up by provider. You can thus see the best games sorted by category and provider with just one look.
+**NetEnt**
 
-If there are games in the list that you have never played before then you should probably try these soon, after all other players have enjoyed these games for years and there must be a reason for that.
+- **Starburst.** Bright, simple and easy to pick up, with expanding wilds. A favourite with beginners.
+- **Gonzo's Quest.** Symbols tumble into place instead of spinning, and multipliers climb in the free falls.
+
+**Play'n GO**
+
+- **Book of Dead.** An Egyptian adventure with a special expanding symbol in the free spins. It is a high volatility game, so expect quiet stretches and the occasional big moment.
+
+**A fair fight?**
+
+Not every game here is trying to be the best in the same way. Mega Moolah is chasing a jackpot, Starburst is built for easy play and Book of Dead is built for big swings. That is exactly why we score every contender on the same five points from [The Rules of the Contest]({% post_url 2017-09-02-The-Ace-of-Games %}).
+
+If some of these games are new to you, many casinos let you try them in a free demo mode first. It is a good way to see whether a game suits you before you play with real money.
+
+The contest begins with [Round 1: Thunderstruck II]({% post_url 2017-09-06-The-Ace-of-Games %}).

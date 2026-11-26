@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: The Ace of Games
+title: "The Ace of Games, Round 1: Thunderstruck II"
 author: Andrew Morris
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
@@ -36,3 +36,5 @@ We will probably come back to this bad boy once more in a later review as we did
 
 Check back soon to see more great game reviews, gaming tricks and tips that will see you finally cash-in at your favourite online Casino.
 
+
+Missed the build-up? Start with [The Rules of the Contest]({% post_url 2017-09-02-The-Ace-of-Games %}) and [Meet the Contenders]({% post_url 2017-09-04-The-Ace-of-Games %}).

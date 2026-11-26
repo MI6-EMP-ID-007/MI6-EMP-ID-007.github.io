@@ -6,7 +6,7 @@ subtitle: |
 ---
 <section>
 	<ul class="posts">
-		{% for post in site.posts limit:8 %}
+		{% for post in site.posts %}
 			{% include postlist.html %}
 		{% endfor %}
 	</ul>

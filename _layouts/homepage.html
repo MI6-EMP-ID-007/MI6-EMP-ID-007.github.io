@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>{{ page.title }} | {{ site.title }}</title>
+		<title>{{ page.title }}{% if paginator.page > 1 %} (Page {{ paginator.page }}){% endif %} | {{ site.title }}</title>
 		{% include head.html %}
 		<meta name="description" content="The Number 1 Casino Academy! All you need to know about the Casino Bonuses, The best online Casinos and how to win big!">
 		<meta name="keywords" content="Online, Casino, Big Wins, Bonus, Best Casinos, Real wins, learn to play better, best, free, best games, strategy,">
@@ -32,159 +32,18 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Post -->
-							{% assign pageNumber = 1 %}
-							{% assign offset = 4 %}
-							
-							<section class="page0" style="display:block;">
-								{% for post in site.posts limit:4 %}
-									{% include postPreview.html %}
-								{% endfor %}
-							</section>
-
-							{% assign totalPageNumber = site.posts.size | divided_by: 4 | ceil %}
-							{% for page in (1..totalPageNumber) %}
-								<section class="page{{pageNumber}}" style="display:none;">
-									{% for post in site.posts limit:4 offset:offset %}
-										{% include postPreview.html %}
-									{% endfor %}
-								</section>
-								{% assign offset = offset | plus: 4 %}
-								{% assign pageNumber = pageNumber | plus: 1 %}
+						<!-- Posts for this page (Jekyll generates /, /page2/, /page3/ ... from the paginate settings in _config.yml) -->
+							{% for post in paginator.posts %}
+								{% include postPreview.html %}
 							{% endfor %}
 
-							
-						<!-- On page Pagination Script. Explanation why the below script is necessary. Because I did not feel like figuring out how to make jekyll generate a million pages based on the number of posts my blog has, I decided to write single page pagination. I later realized that this poses a problem with finding ones spot because the URL doesnt change, so I extended the script to update the URL, i then realized that pushing a URL to the browser history poses a problem because when it is shared or re-used later it throws a 404 error so i decided to redirect all URLs to the homepage, but this causes one to go back to page 0, so i extended the script to move the reader to the correct page based on the referrer page. All in all it was a lot more work than just generating new pages.-->
-								<script>
-								$(document).ready(function(){										
-									/* Script to make buttons work*/		
-									var currentPageNumber = 0
-									var nextPageNumber = 1
-									var previousPageNumber = -1
-									var totalPageNumber = {{totalPageNumber}}-1
-									var endPageNumber = {{totalPageNumber}}
-									var state = {selectedPage: currentPageNumber}
-									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
-									
-									
-
-									$(window).on('popstate', function(event) {
-    									var state = event.originalEvent.state
-
-    									if (state) {
-											
-											if (state.selectedPage == currentPageNumber-1){
-												$('.page' + currentPageNumber).css("display", "none");
-												$('.page' + previousPageNumber).css("display", "block");;
-												if (currentPageNumber-1 < endPageNumber ){
-													document.getElementById("nextButton").className = "button big next";}
-												nextPageNumber -= 1;
-												currentPageNumber -= 1;
-												previousPageNumber -= 1;
-												window.scrollTo(0,0);
-												if (currentPageNumber == 0){
-													document.getElementById("backButton").className = "disabled button big previous";
-												}
-											}
-											else{
-												$('.page' + currentPageNumber).css("display", "none");
-												$('.page' + nextPageNumber).css("display", "block");
-												nextPageNumber += 1
-												currentPageNumber += 1
-												previousPageNumber += 1
-												window.scrollTo(0,0);
-												if (currentPageNumber > 0){
-													document.getElementById("backButton").className = "button big previous"}
-												if (currentPageNumber == endPageNumber ){
-												document.getElementById("nextButton").className = "disabled button big next";}
-											}
-									}
-									})
-
-									$("#nextButton").click(function() {
-										$('.page' + currentPageNumber).css("display", "none");
-										$('.page' + nextPageNumber).css("display", "block");
-										
-									if (currentPageNumber < totalPageNumber ){
-										nextPageNumber += 1
-										currentPageNumber += 1
-										previousPageNumber += 1
-										window.scrollTo(0,0);
-									}
-									else {
-										nextPageNumber = endPageNumber+1
-										currentPageNumber = endPageNumber
-										previousPageNumber = endPageNumber-1
-										window.scrollTo(0,0);
-										document.getElementById("nextButton").className = "disabled button big next";
-										}
-									var state = {selectedPage: currentPageNumber}
-									
-									history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
-									if (currentPageNumber > 0){
-										document.getElementById("backButton").className = "button big previous"}
-									});
-
-									$("#backButton").click(function() {
-										$('.page' + currentPageNumber).css("display", "none");
-										$('.page' + previousPageNumber).css("display", "block");
-										
-										if (currentPageNumber > 1){
-											nextPageNumber -= 1;
-											currentPageNumber -= 1;
-											previousPageNumber -= 1;
-											window.scrollTo(0,0);
-										}
-										else {
-											nextPageNumber = 1;
-											currentPageNumber = 0;
-											previousPageNumber = -1;
-											window.scrollTo(0,0);
-											document.getElementById("backButton").className = "disabled button big previous";
-										}
-										var state = {selectedPage: currentPageNumber}
-										
-										history.pushState(state, "page"+currentPageNumber, "page"+currentPageNumber+".html");
-										if (currentPageNumber == totalPageNumber ){
-											document.getElementById("nextButton").className = "button big next";}
-									});
-								
-
-									/* Script to move to correct page based on page number of pre-redirect URL.*/
-										// Proper explanation of how it works will be in version notes
-										URLPageNumber = document.referrer //finds pre redirect URL
-											//checks if URL is correct then checks length to see if its 1 or 2 digit number, finds the digits and compiles the page number
-											if (URLPageNumber.search("http://localhost:4000/page") >= 0 || URLPageNumber.search("http://casinocademy.com/page") >= 0) {
-												if (URLPageNumber.length==34 || URLPageNumber.length==32 ) {
-													for (i = 0; i <endPageNumber ; i++){
-													}
-													realPageNumber = URLPageNumber[URLPageNumber.length - 6]
-												}
-												else if (URLPageNumber.length==35 || URLPageNumber.length==33) {
-													tempNumber = URLPageNumber[URLPageNumber.length - 7]
-													tempNumber2 = URLPageNumber[URLPageNumber.length - 6]
-													realPageNumber = tempNumber.concat(tempNumber2)
-												}
-												//error message if there's a problem with parsing the page number
-												else {"ERROR - please enter a URL with a valid page number"}
-												//move to real page number
-												for (i = 0; i < realPageNumber; i++){
-													document.getElementById("nextButton").click();
-												}
-											}
-											//error message if problem with URL that is not 404	
-											else {
-												console.log("ERROR - please enter a valid URL")
-											};
-								});
-								</script>
-
-
 						<!-- Pagination -->
+							{% if paginator.total_pages > 1 %}
 							<ul class="actions pagination">
-								<li><a id="backButton" class="disabled button big previous">Previous Page</a></li>
-								<li><a id="nextButton" class="button big next">Next Page</a></li>
+								<li>{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}" class="button big previous" rel="prev">Previous Page</a>{% else %}<a class="disabled button big previous" aria-disabled="true">Previous Page</a>{% endif %}</li>
+								<li>{% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" class="button big next" rel="next">Next Page</a>{% else %}<a class="disabled button big next" aria-disabled="true">Next Page</a>{% endif %}</li>
 							</ul>
+							{% endif %}
 
 					</div>
 

@@ -16,6 +16,20 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 14. Contact page added (`/contact`) and linked from nav, menu, footer, and About. It is a plain `mailto:` form: Send opens the visitor's email app with the message ready for `support@casinocademy.com` (no server or third-party service). The "comment below any post" sentence was dropped from About since there are no comments.
 - [x] 15. Author names and photos now link to `/authors#<author>`.
 
+## Done in the second fix round
+
+- [x] 16. Homepage pagination rebuilt with `jekyll-paginate`: real pages at `/`, `/page2/`, `/page3/` with plain Previous/Next links. It adapts to any number of posts (no blank trailing page) and the fragile JavaScript, the `document.referrer` parsing and the hard-coded `http://` URLs are gone.
+- [x] 17. Header and sidebar links now point at `/` instead of `http://www.casinocademy.com/page0.html`.
+- [x] 18. Fake `pageN.html` URLs: resolved by the new real pages. Old links still work: `/page1.html` goes to `/page2/`, `/page2.html` goes to `/page3/`, and `/page0.html`, `/page3.html` to `/page9.html` go to the homepage.
+- [x] 19. The five "The Ace of Games" stubs are now a series with distinct titles (same dates and URLs): The Rules of the Contest, RTP and Volatility Explained, Meet the Contenders, Spotlight on Immortal Romance, and Round 1: Thunderstruck II (the existing review).
+- [x] 20. Missing content created:
+  - Best Bonuses now has its table, plus the player-type list renders as a real list.
+  - King of Deposits lists all 12 methods and the six scoring points.
+  - Most Popular Casinos now ends with the checklist we use to judge a casino.
+  - No casino names, bonus figures or rankings were invented. The posts link to the (coming soon) rankings pages.
+- [x] 21. "At Casinotips.com" is gone (the post was rewritten as part of #19).
+- [x] 22. `/blog` now lists all 9 posts.
+
 ## Declined or not an issue
 
 - 4. Cookie/consent banner: declined (site does not process cookies).
@@ -35,22 +49,15 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages.
 - [ ] E. The theme's `#header .main ul li` rules style every `li` and `li > a` in the header nav. New widgets in the header should mount outside it (as the search panel does).
 
+## Follow-ups from the second round
+
+- [ ] F. **Verify the game facts** in the new Ace of Games posts. They were written from general knowledge, not checked against the providers' documentation: provider attributions (Microgaming: Thunderstruck II, Immortal Romance, Mega Moolah; NetEnt: Starburst, Gonzo's Quest; Play'n GO: Book of Dead), 243 ways for Thunderstruck II and Immortal Romance, Immortal Romance's 2011 launch, its four characters, the Chamber of Spins and the Wild Desire feature, and the volatility descriptions.
+- [ ] G. When Casino Rankings and Bonus Rankings launch, replace the `/comingSoon` links in Best Bonuses and Most Popular Casinos.
+- [ ] H. **Favicon is probably not loading.** `_includes/head.html` has `href=/favicon.ico/>` unquoted, so browsers request `/favicon.ico/`, which returns 404 on the live site. Quote the attribute (part of #37).
+- [ ] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image.
+- [ ] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added.
+
 ## Remaining issues, by priority
-
-### High (visible breakage and content)
-
-- [ ] 16. Homepage pagination is fragile.
-  - `divided_by: 4 | ceil` uses integer division, so a post count that is a multiple of 4 produces a blank trailing page.
-  - Page restore parses `document.referrer` by string length and hard-codes `http://casinocademy.com/page` and `http://localhost:4000`. Under HTTPS the referrer check never matches, so deep links lose their position.
-- [ ] 17. Header and sidebar link to a hard-coded `http://www.casinocademy.com/page0.html` (3 places). That is http + www, goes through a redirect, and downgrades the connection.
-- [ ] 18. `pushState` writes `pageN.html` URLs that are not real pages. Refreshing or sharing one lands on page 0, and only `page0`–`page9` redirect.
-- [ ] 19. Five posts are titled "The Ace of Games" and are mostly stubs (e.g. "Meet Immortal Romance / Best games across the web"). Thin duplicate content.
-- [ ] 20. Posts promise content that is not there:
-  - Best Bonuses says "the below table…" but has no table.
-  - King of Deposits lists "the following 12 deposit methods" but none follow.
-  - Most Popular Casinos ends right after its intro.
-- [ ] 21. The 2017-09-04 post says "At Casinotips.com…", the wrong brand.
-- [ ] 22. `/blog` shows only 8 posts (`limit:8`), so the 9th is missing.
 
 ### Medium: SEO and discoverability
 
