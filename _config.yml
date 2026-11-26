@@ -4,6 +4,7 @@ description: Casinocademy teaches online casino players how it all works, with p
 url: "https://casinocademy.com"
 baseurl: ""
 lang: en
+timezone: UTC
 locale: en_GB
 excerpt_separator: <!--more-->
 plugins:
@@ -14,8 +15,11 @@ plugins:
   - jekyll-seo-tag
 paginate: 4
 paginate_path: "/page:num/"
+redirect_from:
+  json: false
 exclude:
   - issues.md
+  - README.md
 defaults:
   - scope:
       path: ""

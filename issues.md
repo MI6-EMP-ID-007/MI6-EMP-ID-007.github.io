@@ -76,12 +76,10 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Follow-ups from the fourth round
 
-- [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`).
-- [ ] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews.
-- [ ] S. `locale` is set to `en_GB` because the copy uses British spelling. Change it if the audience is mainly US.
-- [ ] T. After the next deploy, run a page through the Facebook Sharing Debugger and LinkedIn Post Inspector (they cache previews) and Google's Rich Results Test to confirm the tags and structured data are read as intended.
-- [ ] U. Dates in `article:published_time` and the structured data carry the build machine's time zone offset. Set `timezone:` in `_config.yml` so it is the same wherever the site is built.
-- [ ] V. No `WebSite` search box in the structured data: it needs a URL-based search results page, which the client-side search does not have.
+- [x] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews. **Closed: see D.**
+- [x] S. `locale` is set to `en_GB` because the copy uses British spelling. Change it if the audience is mainly US. **Closed: `en_GB` stays.**
+- [x] U. Dates in `article:published_time` and the structured data carry the build machine's time zone offset. Set `timezone:` in `_config.yml` so it is the same wherever the site is built. **Fixed: `timezone: UTC` in `_config.yml`; dates now read `+00:00` on every machine.**
+- [x] V. No `WebSite` search box in the structured data: it needs a URL-based search results page, which the client-side search does not have. **Closed, not doing: it needs a URL-based results page, and Google has retired the sitelinks search box anyway.**
 - [ ] W. **Possible schema.org type-case quirk.** `jekyll-seo-tag` 2.8.0 (the version GitHub Pages provides) writes each post's `image` as `"@type": "imageObject"` (lowercase i) while writing its publisher logo as `ImageObject`. Schema.org types are case-sensitive. Run a post through Google's Rich Results Test (see T). If it flags the image, the fix is to hand-write the `BlogPosting` block in `_layouts/posts.html` and stop using the plugin's structured data for posts (the plugin has no switch to turn off only its JSON-LD, so that would mean dropping the plugin and writing the canonical, Open Graph and Twitter tags by hand).
 
 ## Declined or not an issue
@@ -99,6 +97,8 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist). **Pinned: tackle with the better contact form (B).**
 - [ ] 57. No affiliate or advertising disclosure. Needed before rankings go live. **Pinned: do when the site is production ready and ads or affiliate content are running.**
 - [ ] 58. No CAA DNS record. Optional hardening. **Pinned.**
+- [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`). **Pinned: accounts do not exist yet.**
+- [ ] T. After the next deploy, run a page through the Facebook Sharing Debugger and LinkedIn Post Inspector (they cache previews) and Google's Rich Results Test to confirm the tags and structured data are read as intended. **Pinned: do at go-live.**
 
 ## Backend for interactive features (planned)
 
@@ -108,26 +108,26 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ## Follow-ups from the first round
 
-- [ ] A. **Abigail Benson's bio and avatar are placeholders.** The bio text is a draft and the avatar is a generated "AB" initials image (`images/Authors/abigail-benson.svg`). Replace both with real content. Andrew Morris's bio is based on the existing posts; review it too.
-- [ ] B. **Contact form is `mailto:`-based.** Visitors without an email app configured (common on shared or work computers) can't send anything; the page also shows the address as a fallback. If that becomes a problem, the alternatives are a form service or a small serverless function.
-- [ ] C. **Check GA4 exists inside the GTM container** `GTM-MS9J2KH`. With the UA tag gone, analytics only works if GTM has a GA4 tag.
-- [ ] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages.
+- [x] A. **Abigail Benson's bio and avatar are placeholders.** The bio text is a draft and the avatar is a generated "AB" initials image (`images/Authors/abigail-benson.svg`). Replace both with real content. Andrew Morris's bio is based on the existing posts; review it too. **Closed: owner will supply real bios and avatars.**
+- [x] B. **Contact form is `mailto:`-based.** Visitors without an email app configured (common on shared or work computers) can't send anything; the page also shows the address as a fallback. If that becomes a problem, the alternatives are a form service or a small serverless function. **Closed: handled by #56 (pinned).**
+- [ ] C. **Check GA4 exists inside the GTM container** `GTM-MS9J2KH`. With the UA tag gone, analytics only works if GTM has a GA4 tag. **Checked 2026-11-26: the published container has no tags at all (tags list empty), so no analytics are being collected. A GA4 Google tag still has to be added in tagmanager.google.com and the container published.**
+- [x] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages. **Closed: banner images will be revisited later (with I, M, Q).**
 - [ ] E. The theme's `#header .main ul li` rules style every `li` and `li > a` in the header nav. New widgets in the header should mount outside it (as the search panel does).
 
 ## Follow-ups from the second round
 
-- [ ] F. **Verify the game facts** in the new Ace of Games posts. They were written from general knowledge, not checked against the providers' documentation: provider attributions (Microgaming: Thunderstruck II, Immortal Romance, Mega Moolah; NetEnt: Starburst, Gonzo's Quest; Play'n GO: Book of Dead), 243 ways for Thunderstruck II and Immortal Romance, Immortal Romance's 2011 launch, its four characters, the Chamber of Spins and the Wild Desire feature, and the volatility descriptions.
-- [ ] G. When Casino Rankings and Bonus Rankings launch, replace the `/comingSoon` links in Best Bonuses and Most Popular Casinos.
-- [ ] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image.
+- [x] F. **Verify the game facts** in the new Ace of Games posts. They were written from general knowledge, not checked against the providers' documentation: provider attributions (Microgaming: Thunderstruck II, Immortal Romance, Mega Moolah; NetEnt: Starburst, Gonzo's Quest; Play'n GO: Book of Dead), 243 ways for Thunderstruck II and Immortal Romance, Immortal Romance's 2011 launch, its four characters, the Chamber of Spins and the Wild Desire feature, and the volatility descriptions. **Closed: owner checked; the posts are not presented as hard facts.**
+- [x] G. When Casino Rankings and Bonus Rankings launch, replace the `/comingSoon` links in Best Bonuses and Most Popular Casinos. **Closed: nothing to do until the rankings launch.**
+- [x] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image. **Closed: images will be revisited later (see D).**
 - [ ] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added.
 
 ## Follow-ups from the third round
 
-- [ ] K. **Topic assignments are my judgement.** Games (the 5 Ace of Games posts), Bonuses (Best Bonuses), Payments (King of Deposits), Casinos (Most Popular Casinos), Site News (My First Post). Change `topic:` in any post's front matter; a new topic needs a file in `topics/`.
+- [x] K. **Topic assignments are my judgement.** Games (the 5 Ace of Games posts), Bonuses (Best Bonuses), Payments (King of Deposits), Casinos (Most Popular Casinos), Site News (My First Post). Change `topic:` in any post's front matter; a new topic needs a file in `topics/`. **Closed: owner approved the topic assignments.**
 - [ ] L. Topics are not in the main nav or footer. They are linked from the About page and each post's footer only. Add a nav or menu entry if wanted.
-- [ ] M. Author and topic pages show the shared `Casino.jpg` banner (see D).
-- [ ] N. The paginated pages `/page2/` and `/page3/` share the homepage's meta description, and are in the sitemap. Consider unique descriptions or `noindex` once more posts exist.
-- [ ] O. `redirects.json` (created by jekyll-redirect-from) and `README.md` are published on the site. Exclude them in `_config.yml` if unwanted.
+- [x] M. Author and topic pages show the shared `Casino.jpg` banner (see D). **Closed: see D.**
+- [x] N. The paginated pages `/page2/` and `/page3/` share the homepage's meta description, and are in the sitemap. Consider unique descriptions or `noindex` once more posts exist. **Fixed: pages 2 and later now get their own description listing the posts on that page (built in `head.html`).**
+- [x] O. `redirects.json` (created by jekyll-redirect-from) and `README.md` are published on the site. Exclude them in `_config.yml` if unwanted. **Fixed: `README.md` is excluded and `redirect_from: json: false` stops `redirects.json` being generated. `LICENSE` is still published, on purpose.**
 
 ## Remaining issues, by priority
 

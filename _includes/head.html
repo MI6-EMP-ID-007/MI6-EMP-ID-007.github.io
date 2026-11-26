@@ -1,6 +1,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{% seo title=false %}
+		{% capture seo_output %}{% seo title=false %}{% endcapture %}
+		{% if paginator and paginator.page > 1 %}
+			{% comment %}Paginated pages describe their own posts instead of repeating the homepage description.{% endcomment %}
+			{% capture page_desc %}Page {{ paginator.page }} of the Casinocademy blog: {% for post in paginator.posts %}{{ post.title | escape }}{% if forloop.last %}.{% elsif forloop.rindex == 2 %} and {% else %}, {% endif %}{% endfor %}{% endcapture %}
+			{{ seo_output | replace: page.description, page_desc }}
+		{% else %}
+			{{ seo_output }}
+		{% endif %}
 		<!-- Organization structured data (jekyll-seo-tag would label the publisher with the post author's name, so it is described here instead) -->
 		<script type="application/ld+json">
 		{
