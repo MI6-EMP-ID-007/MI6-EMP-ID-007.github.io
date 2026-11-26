@@ -13,7 +13,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 9. Search box replaced with real client-side search (`assets/js/search.js`, `search.json`).
 - [x] 10. Login button removed from the menu.
 - [x] 12. Authors page added (`/authors`). Mobile-menu links now go to `/authors` and `/comingSoon` instead of `#`.
-- [x] 14. Contact page added (`/contact`) and linked from nav, menu, footer, and About. The "comment below any post" sentence was dropped from About since there are no comments.
+- [x] 14. Contact page added (`/contact`) and linked from nav, menu, footer, and About. It is a plain `mailto:` form: Send opens the visitor's email app with the message ready for `support@casinocademy.com` (no server or third-party service). The "comment below any post" sentence was dropped from About since there are no comments.
 - [x] 15. Author names and photos now link to `/authors#<author>`.
 
 ## Declined or not an issue
@@ -30,7 +30,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 ## Follow-ups from the first round
 
 - [ ] A. **Abigail Benson's bio and avatar are placeholders.** The bio text is a draft and the avatar is a generated "AB" initials image (`images/Authors/abigail-benson.svg`). Replace both with real content. Andrew Morris's bio is based on the existing posts; review it too.
-- [ ] B. **Contact form needs one-time activation.** It posts to FormSubmit. The first submission sends an activation email to `support@casinocademy.com`; click the link in it, otherwise messages are not delivered. The thank-you redirect URL is hard-coded to `https://casinocademy.com/contact?sent=1` in `contact.md`.
+- [ ] B. **Contact form is `mailto:`-based.** Visitors without an email app configured (common on shared or work computers) can't send anything; the page also shows the address as a fallback. If that becomes a problem, the alternatives are a form service or a small serverless function.
 - [ ] C. **Check GA4 exists inside the GTM container** `GTM-MS9J2KH`. With the UA tag gone, analytics only works if GTM has a GA4 tag.
 - [ ] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages.
 - [ ] E. The theme's `#header .main ul li` rules style every `li` and `li > a` in the header nav. New widgets in the header should mount outside it (as the search panel does).

@@ -116,22 +116,4 @@
 
 /* ---------- Contact page ---------- */
 
-.contact-form .form-trap {   /* honeypot: hidden from people, visible to bots */
-	height: 0;
-	left: -9999px;
-	opacity: 0;
-	position: absolute;
-	width: 0;
-}
-
-.form-sent {
-	background: rgba(46, 186, 174, 0.12);
-	border-left: solid 4px #2ebaae;
-	margin: 0 0 2em 0;
-	padding: 1em 1.25em;
-}
-
-.form-sent[hidden],
-.contact-form[hidden] { display: none; }
-
 .form-note { color: #999999; font-size: 0.85em; margin-top: 1.5em; }
