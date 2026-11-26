@@ -112,19 +112,19 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 - [x] B. **Contact form is `mailto:`-based.** Visitors without an email app configured (common on shared or work computers) can't send anything; the page also shows the address as a fallback. If that becomes a problem, the alternatives are a form service or a small serverless function. **Closed: handled by #56 (pinned).**
 - [ ] C. **Check GA4 exists inside the GTM container** `GTM-MS9J2KH`. With the UA tag gone, analytics only works if GTM has a GA4 tag. **Checked 2026-11-26: the published container has no tags at all (tags list empty), so no analytics are being collected. A GA4 Google tag still has to be added in tagmanager.google.com and the container published.**
 - [x] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages. **Closed: banner images will be revisited later (with I, M, Q).**
-- [ ] E. The theme's `#header .main ul li` rules style every `li` and `li > a` in the header nav. New widgets in the header should mount outside it (as the search panel does).
+- [x] E. The theme's `#header .main ul li` rules style every `li` and `li > a` in the header nav. New widgets in the header should mount outside it (as the search panel does). **Closed: developer note only, no action needed.**
 
 ## Follow-ups from the second round
 
 - [x] F. **Verify the game facts** in the new Ace of Games posts. They were written from general knowledge, not checked against the providers' documentation: provider attributions (Microgaming: Thunderstruck II, Immortal Romance, Mega Moolah; NetEnt: Starburst, Gonzo's Quest; Play'n GO: Book of Dead), 243 ways for Thunderstruck II and Immortal Romance, Immortal Romance's 2011 launch, its four characters, the Chamber of Spins and the Wild Desire feature, and the volatility descriptions. **Closed: owner checked; the posts are not presented as hard facts.**
 - [x] G. When Casino Rankings and Bonus Rankings launch, replace the `/comingSoon` links in Best Bonuses and Most Popular Casinos. **Closed: nothing to do until the rankings launch.**
 - [x] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image. **Closed: images will be revisited later (see D).**
-- [ ] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added.
+- [x] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added. **Closed: the old URLs only ever existed for the old 3-page layout, so the mapping never needs to change.**
 
 ## Follow-ups from the third round
 
 - [x] K. **Topic assignments are my judgement.** Games (the 5 Ace of Games posts), Bonuses (Best Bonuses), Payments (King of Deposits), Casinos (Most Popular Casinos), Site News (My First Post). Change `topic:` in any post's front matter; a new topic needs a file in `topics/`. **Closed: owner approved the topic assignments.**
-- [ ] L. Topics are not in the main nav or footer. They are linked from the About page and each post's footer only. Add a nav or menu entry if wanted.
+- [x] L. Topics are not in the main nav or footer. They are linked from the About page and each post's footer only. Add a nav or menu entry if wanted. **Fixed: one "Topics" link to `/topics/` added to the footer (not a link per topic, so it does not grow). Revisit a main-nav entry at roughly 8-10 topics.**
 - [x] M. Author and topic pages show the shared `Casino.jpg` banner (see D). **Closed: see D.**
 - [x] N. The paginated pages `/page2/` and `/page3/` share the homepage's meta description, and are in the sitemap. Consider unique descriptions or `noindex` once more posts exist. **Fixed: pages 2 and later now get their own description listing the posts on that page (built in `head.html`).**
 - [x] O. `redirects.json` (created by jekyll-redirect-from) and `README.md` are published on the site. Exclude them in `_config.yml` if unwanted. **Fixed: `README.md` is excluded and `redirect_from: json: false` stops `redirects.json` being generated. `LICENSE` is still published, on purpose.**
