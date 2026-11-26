@@ -96,6 +96,9 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] 7. Fake engagement numbers: every post shows a hard-coded "28 likes / 128 comments", and "Most Popular, as voted by you" is just the 4 newest posts. **Decision: keep them and make them real** by loading counts from a hosted backend via a JS API call (see "Backend" below). Do not remove the counters.
 - [ ] 11. Twitter and Facebook footer icons link to `#`, and the About page asks visitors to follow you there.
 - [ ] 13. 3 of the 5 nav items (Casino Rankings, Bonus Rankings, and formerly Authors) go to the same "coming soon" page, and its browser title is the raw text `comingSoon`.
+- [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist). **Pinned: tackle with the better contact form (B).**
+- [ ] 57. No affiliate or advertising disclosure. Needed before rankings go live. **Pinned: do when the site is production ready and ads or affiliate content are running.**
+- [ ] 58. No CAA DNS record. Optional hardening. **Pinned.**
 
 ## Backend for interactive features (planned)
 
@@ -131,6 +134,3 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ### Low: content polish and housekeeping
 
-- [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist).
-- [ ] 57. No affiliate or advertising disclosure. Needed before rankings go live.
-- [ ] 58. No CAA DNS record. Optional hardening.
