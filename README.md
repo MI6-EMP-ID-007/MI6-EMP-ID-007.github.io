@@ -4,4 +4,4 @@ Source Code for www.casinocademy.com
 
 © 2017 All rights reserved | Website by casinocademy.com | Design by HTML5 UP!
 
-Unauthorized distribution of the content in this repository is prohibited.
+This repository is public only so GitHub Pages can host the site. All rights reserved: see [LICENSE](LICENSE). Unauthorized copying or distribution of the content in this repository is prohibited.

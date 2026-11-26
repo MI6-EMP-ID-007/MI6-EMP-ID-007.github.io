@@ -47,12 +47,10 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 29. Structured data added: `BlogPosting` for each post (headline, author, dates, image), `WebSite` for the homepage, `WebPage` for other pages, and a hand-written `Organization` block (Casinocademy plus the hat logo) on every page. The plugin would have named the publisher after the post's author, so no `logo:` is set in `_config.yml` and the Organization is described in `_includes/head.html` instead. Do not add `logo:` to the config.
 - [x] 25 (update). Meta descriptions are now written by `jekyll-seo-tag`: `description:` front matter first, then the post excerpt, then the site description. The earlier hand-made fallback in `head.html` was removed.
 
-## Done in the fifth fix round
-
 - [x] R. Site name: `title:` in `_config.yml` is now "Casinocademy" instead of the domain. Page titles now end in "| Casinocademy" (e.g. "No. 1 Casino Academy | Casinocademy", "... (Page 2) | Casinocademy"), and the feed title, `og:site_name` and the WebSite structured data say "Casinocademy".
 - [x] H. Favicon fixed: the link was `href=/favicon.ico/>` unquoted, so browsers requested `/favicon.ico/` (404). It is now quoted and resolves to `/favicon.ico` (verified on every page type in Chrome).
 
-## Done in the sixth fix round
+## Done in the fifth fix round
 
 - [x] 33. Fixed the `<img img src=…` typo in `miniPost.html`.
 - [x] 34. Sidebar thumbnail alt text is now `{{ post.author }}`.
@@ -73,6 +71,8 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 48. Font Awesome 4 (29 KB CSS plus six font files) replaced by `assets/css/icons.css` and a 2.4 KB subset font (`assets/fonts/fontawesome-subset.woff2`) with only the 13 glyphs the site uses (search, heart, comment, bars, twitter, facebook, instagram, rss, envelope, and the chevrons, check and chevron-down that `main.css` uses by code). The `@import` in `main.css` and the old font files were deleted. To add an icon later, add its code to the subset (`pyftsubset --unicodes=...`) and a rule in `icons.css`.
 - [x] 50. Typos fixed across all content and templates (posts, About, header, sidebar): "Your number one stop", "Tips and Tricks", "experiences", "professionals", "online", "The Web's best", "The world's No. 1", "its" for "it's" (3x in Best Bonuses, 1x in Round 1), "casino's opening offer", "don't", "Microgaming's", "casino players", "how most of the stuff works", "how-tos", "slot machine", "cash in", plus a few capitals, commas and a missing question mark and full stop (and "King of Deposits" / "Most Popular Casinos" in titles). I did not find "addage". Facebook and Twitter are now capitalised on About.
 - [x] 53. `_site/` removed from the repo (78 files). No `.gitignore` was added, as requested; if you build locally with Jekyll, `_site/` will reappear and must not be committed.
+- [x] 54. Repo stays public. Added a `LICENSE` (all rights reserved, with a note that the HTML5 UP template keeps its own CC BY 3.0 licence) and updated the README to match.
+- [x] 55. Andrew Morris now uses a generated "AM" initials avatar (`images/Authors/andrew-morris.svg`). Swap in a real image when one is found; the old `Andrew Morris.jpg` is still in the repo, unused.
 
 ## Follow-ups from the fourth round
 
@@ -131,8 +131,6 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ### Low: content polish and housekeeping
 
-- [ ] 54. The repo is public, but the README says "unauthorized distribution prohibited" and there is no LICENSE file. Pick one.
-- [ ] 55. Andrew Morris now uses a generated "AM" initials avatar (`images/Authors/andrew-morris.svg`). Swap in a real image when one is found. The old `Andrew Morris.jpg` is still in the repo, unused.
 - [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist).
 - [ ] 57. No affiliate or advertising disclosure. Needed before rankings go live.
 - [ ] 58. No CAA DNS record. Optional hardening.
