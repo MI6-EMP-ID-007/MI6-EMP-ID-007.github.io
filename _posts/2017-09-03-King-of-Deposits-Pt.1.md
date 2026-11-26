@@ -2,6 +2,8 @@
 layout: posts
 title: King of deposits Pt. 1 - Introduction
 author: Andrew Morris
+topic: Payments
+description: "We are testing 12 online casino deposit methods, one per week. Here is the full line-up and how each one will be scored."
 headerImg: Casino.jpg
 subtitle: |
     One method to rule them all!

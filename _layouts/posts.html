@@ -7,7 +7,7 @@
 
 	Modified for use with jekyll and adapted for web by casinocademy.com
 -->
-<html>
+<html lang="{{ site.lang | default: 'en' }}">
 	<head>
 		<title>{{ page.title }} | {{ site.title }}</title>
 		{% include head.html %}
@@ -30,7 +30,7 @@
 									</div>
 									<div class="meta">
 										<!-- Post Date Stamp -->
-										<time class="published" datetime="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+										<time class="published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
 										<!-- Author Metadata (Name, Img, Link) -->
 										{% assign authorImg = 'images/Authors/' | append:page.author | append:".jpg" %}
 										<a href="{{ '/authors' | relative_url }}#{{ page.author | slugify }}" class="author">
@@ -45,7 +45,7 @@
 								
 								<footer>
 									<ul class="stats">
-										<li><a href="#">General</a></li>
+										{% if page.topic %}{% assign topic_slug = page.topic | slugify %}<li><a href="{{ '/topics/' | append: topic_slug | append: '/' | relative_url }}">{{ page.topic }}</a></li>{% else %}<li><a href="{{ '/topics/' | relative_url }}">General</a></li>{% endif %}
 										<li><a href="#" class="icon fa-heart">28</a></li>
 										<li><a href="#" class="icon fa-comment">128</a></li>
 									</ul>

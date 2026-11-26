@@ -7,7 +7,7 @@
 
 	Modified for use with jekyll and adapted for web by casinocademy.com
 -->
-<html>
+<html lang="{{ site.lang | default: 'en' }}">
 	<head>
 		<title>{{ page.title }} | {{ site.title }}</title>
 		{% include head.html %}  
@@ -30,7 +30,7 @@
 										<p>{{page.subtitle | textilize}}</p>
 									</div>
 								</header>
-								<span class="image featured"><img src="images/Casino.jpg" alt="" /></span>
+								<span class="image featured"><img src="{{ '/images/Casino.jpg' | relative_url }}" alt="" /></span>
 								<p>{{ content }}</p>
 							</article>
 

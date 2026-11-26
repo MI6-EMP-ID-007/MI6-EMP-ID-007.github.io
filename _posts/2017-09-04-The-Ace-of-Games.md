@@ -2,6 +2,8 @@
 layout: posts
 title: "The Ace of Games: Meet the Contenders"
 author: Andrew Morris
+topic: Games
+description: "Meet the Ace of Games contenders, from Thunderstruck II to Book of Dead, grouped by software provider."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
     The games, grouped by software provider, that will compete for the crown.

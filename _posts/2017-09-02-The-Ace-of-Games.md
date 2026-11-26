@@ -2,6 +2,8 @@
 layout: posts
 title: "The Ace of Games: The Rules of the Contest"
 author: Andrew Morris
+topic: Games
+description: "How The Ace of Games works: the five points we use to score online casino games and decide which one deserves the crown."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
     How we will decide which online casino game deserves the crown.

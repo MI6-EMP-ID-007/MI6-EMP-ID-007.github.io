@@ -1,5 +1,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{%- assign meta_description = page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 | default: site.description -%}
+		<meta name="description" content="{{ meta_description | escape }}" />
+		{% feed_meta %}
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 			<link rel="stylesheet" href={{"assets/css/main.css" | relative_url}} />
 			<link rel="stylesheet" href={{"assets/css/custom.css" | relative_url}} />

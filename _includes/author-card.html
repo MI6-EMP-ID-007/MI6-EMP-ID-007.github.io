@@ -1,0 +1,13 @@
+{%- comment -%} Parameters: author (an entry from _data/authors.yml) and link_to_posts (true to show the link to the per-author page). {%- endcomment -%}
+<img class="author-photo" src="{{ '/images/' | append: include.author.photo | relative_url }}" alt="{{ include.author.name }}" width="140" height="140" />
+<div class="author-details">
+	<h3>{{ include.author.name }}</h3>
+	<p class="author-role">{{ include.author.role }}</p>
+	{% for paragraph in include.author.bio %}<p>{{ paragraph }}</p>
+	{% endfor %}
+	{%- if include.link_to_posts -%}
+	{%- assign author_slug = include.author.name | slugify -%}
+	{%- assign author_post_count = site.posts | where: "author", include.author.name | size -%}
+	<p><a href="{{ '/authors/' | append: author_slug | append: '/' | relative_url }}">{% if author_post_count > 0 %}All {{ author_post_count }} post{% if author_post_count != 1 %}s{% endif %} by {{ include.author.name }} &rarr;{% else %}{{ include.author.name }}'s page &rarr;{% endif %}</a></p>
+	{%- endif -%}
+</div>

@@ -2,6 +2,8 @@
 layout: posts
 title: Most popular Casinos
 author: Andrew Morris
+topic: Casinos
+description: "What makes an online casino worth joining? The checklist we use to judge licences, games, payments, bonuses and support."
 headerImg: bestCasino.jpg
 subtitle: |
     What makes a casino worth your time? Here is how we judge.

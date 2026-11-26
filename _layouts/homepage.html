@@ -8,12 +8,10 @@
 	Modified for use with jekyll and adapted for web by casinocademy.com
 -->
 
-<html>
+<html lang="{{ site.lang | default: 'en' }}">
 	<head>
 		<title>{{ page.title }}{% if paginator.page > 1 %} (Page {{ paginator.page }}){% endif %} | {{ site.title }}</title>
 		{% include head.html %}
-		<meta name="description" content="The Number 1 Casino Academy! All you need to know about the Casino Bonuses, The best online Casinos and how to win big!">
-		<meta name="keywords" content="Online, Casino, Big Wins, Bonus, Best Casinos, Real wins, learn to play better, best, free, best games, strategy,">
 		<meta name="author" content="Casinocademy team">
 	</head>
 	<body>

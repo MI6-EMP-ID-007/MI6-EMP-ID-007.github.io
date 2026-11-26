@@ -1,0 +1,10 @@
+{%- comment -%} Lists every post whose `topic:` matches the current page's `topic:`. {%- endcomment -%}
+{%- assign topic_posts = site.posts | where: "topic", page.topic -%}
+<section>
+	<ul class="posts">
+		{% for post in topic_posts %}
+			{% include postlist.html %}
+		{% endfor %}
+	</ul>
+</section>
+<p><a href="{{ '/topics/' | relative_url }}">&larr; All topics</a></p>

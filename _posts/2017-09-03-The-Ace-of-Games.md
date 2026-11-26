@@ -2,6 +2,8 @@
 layout: posts
 title: "The Ace of Games: RTP and Volatility Explained"
 author: Andrew Morris
+topic: Games
+description: "RTP and volatility explained in plain English: the two numbers every online slot player should understand before picking a game."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
     Two numbers every slot player should understand before we start scoring games.

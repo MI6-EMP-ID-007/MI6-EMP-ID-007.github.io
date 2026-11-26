@@ -2,6 +2,8 @@
 layout: posts
 title: Best Bonuses
 author: Andrew Morris
+topic: Bonuses
+description: "How to judge an online casino welcome bonus, with the best kind of offer for high rollers, leisure gamers and mathematicians."
 headerImg: GoldChest.jpg
 subtitle: |
     The best Bonuses in the Online Casino world laid out for you

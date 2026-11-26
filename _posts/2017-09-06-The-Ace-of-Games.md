@@ -2,6 +2,8 @@
 layout: posts
 title: "The Ace of Games, Round 1: Thunderstruck II"
 author: Andrew Morris
+topic: Games
+description: "Round 1 of The Ace of Games: our in-depth review of Microgaming's Thunderstruck II and its Great Hall of Spins bonus feature."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
     One Game will be crowned as the undisputed winner amongst the Games. Will it be this one?

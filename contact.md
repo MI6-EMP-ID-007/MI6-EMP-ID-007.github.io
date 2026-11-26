@@ -1,5 +1,6 @@
 ---
 title: Contact
+description: "Get in touch with the Casinocademy team. Questions, feedback and ideas for new posts are always welcome."
 layout: single
 subtitle: |
     Questions, feedback or ideas for a post? We would love to hear from you.

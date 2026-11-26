@@ -30,6 +30,25 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 21. "At Casinotips.com" is gone (the post was rewritten as part of #19).
 - [x] 22. `/blog` now lists all 9 posts.
 
+## Done in the third fix round
+
+- [x] 23. Added `jekyll-sitemap` and `jekyll-feed` (both supported by GitHub Pages) and a `robots.txt`. The sitemap lists 25 URLs (no redirect stubs, 404 or search index), the feed has all 9 posts, and the feed is advertised in every page's `<head>`.
+- [x] 25. Wrote a meta description for every page and post (all under 160 characters). Pages and posts set `description:` in their front matter. If one is missing, `head.html` falls back to the post's excerpt, then to the site description.
+- [x] 26. Removed the obsolete `keywords` meta tag.
+- [x] 27. Added `lang="en"` to every page (driven by `lang` in `_config.yml`).
+- [x] 28. Custom 404 page ("Snake Eyes! This page folded before we could show you its hand.") in `404.md`.
+- [x] 30. `<time datetime>` now uses ISO dates (`date_to_xmlschema`).
+- [x] 31. `_config.yml` now has `url`, `baseurl`, `lang` and `description`.
+- [x] 32. Added per-author pages (`/authors/andrew-morris/`, `/authors/abigail-benson/`) and per-topic pages (`/topics/`, `/topics/games/`, `bonuses`, `payments`, `casinos`, `site-news`). The post footers' dead "General" link now goes to the post's topic. The About page links the authors page, both author pages, the topics index and every topic. The /authors page now links to each author's own page instead of listing their posts.
+
+## Explained, decision pending
+
+- [ ] 24. **Canonical and social sharing tags.** Explained to the owner; not implemented yet.
+  - A *canonical* tag tells search engines which URL is the official one when the same content can be reached several ways (http/https, `/about` vs `/about.html`, paginated pages). It stops ranking signals being split.
+  - *Open Graph / Twitter card* tags give Facebook, LinkedIn, WhatsApp, Slack and X a title, description and image for link previews. Without them, shared links often look bare.
+  - Fix options: (a) add the `jekyll-seo-tag` plugin and `{% seo %}` to `head.html`, which also covers #29. It would replace the description logic added for #25, so the `description:` front matter stays but `head.html`'s own `<title>` and description lines would go; or (b) hand-write about a dozen lines in `head.html`. Needs a default share image and, optionally, a Twitter handle.
+- [ ] 29. **Structured data.** Explained to the owner; not implemented yet. It is a small block of machine-readable JSON-LD (schema.org vocabulary) in the page head describing what the page is: an `Article` (headline, author, dates, image), the `Organization` (name, logo, URL), and the `WebSite` (including its search box). It helps search engines understand who is behind the site and can enable richer search listings. It is not a ranking guarantee. Do not add review or rating markup without real reviews. Fixed by the same `jekyll-seo-tag` plugin as #24, or by hand in `_layouts/posts.html`.
+
 ## Declined or not an issue
 
 - 4. Cookie/consent banner: declined (site does not process cookies).
@@ -57,20 +76,16 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image.
 - [ ] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added.
 
+## Follow-ups from the third round
+
+- [ ] K. **Topic assignments are my judgement.** Games (the 5 Ace of Games posts), Bonuses (Best Bonuses), Payments (King of Deposits), Casinos (Most Popular Casinos), Site News (My First Post). Change `topic:` in any post's front matter; a new topic needs a file in `topics/`.
+- [ ] L. Topics are not in the main nav or footer. They are linked from the About page and each post's footer only. Add a nav or menu entry if wanted.
+- [ ] M. Author and topic pages show the shared `Casino.jpg` banner (see D).
+- [ ] N. The paginated pages `/page2/` and `/page3/` share the homepage's meta description, and are in the sitemap. Consider unique descriptions or `noindex` once more posts exist.
+- [ ] O. `redirects.json` (created by jekyll-redirect-from) and `README.md` are published on the site. Exclude them in `_config.yml` if unwanted.
+
 ## Remaining issues, by priority
 
-### Medium: SEO and discoverability
-
-- [ ] 23. `robots.txt`, `sitemap.xml`, `feed.xml` all 404. Add `jekyll-sitemap`, `jekyll-feed`, `jekyll-seo-tag` (supported by GitHub Pages).
-- [ ] 24. No canonical tags, Open Graph tags, or Twitter cards, so link previews are blank.
-- [ ] 25. Meta description exists only on the homepage.
-- [ ] 26. The `keywords` meta tag is obsolete and looks spammy. Remove it.
-- [ ] 27. `<html>` has no `lang` attribute.
-- [ ] 28. No custom `404.html`; visitors get GitHub's default page.
-- [ ] 29. No structured data (`Article`, `Organization`).
-- [ ] 30. `<time datetime="Sep 6, 2017">` is not machine-readable. Use `%Y-%m-%d`.
-- [ ] 31. `_config.yml` has no `url`, `lang`, or `description`.
-- [ ] 32. No per-author or per-category pages for internal linking (authors now have a profile page; post lists per author are there).
 
 ### Medium: markup, accessibility, correctness
 
@@ -79,7 +94,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] 35. `id="main"` is used twice (`div#main` and `p#main` in the sidebar).
 - [ ] 36. `<p>{{ content }}</p>` in the layouts wraps block content in a paragraph (invalid HTML).
 - [ ] 37. Many attributes are unquoted, e.g. `src={{ … }}`; breaks on paths with spaces.
-- [ ] 38. `single.html` hard-codes `images/Casino.jpg` without `relative_url`, and the alt text is empty.
+- [ ] 38. `single.html`: the banner path now uses `relative_url` (fixed in round 3), but the alt text is still empty.
 - [ ] 39. (Search inputs now have `aria-label`.) Check the remaining form controls for labels once pages are added.
 - [ ] 40. `href="#"` used as a button in several places. Use `<button>` or remove.
 - [ ] 41. `textilize` filter is deprecated.

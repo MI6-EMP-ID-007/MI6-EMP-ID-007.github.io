@@ -2,6 +2,8 @@
 layout: posts
 title: "The Ace of Games: Spotlight on Immortal Romance"
 author: Andrew Morris
+topic: Games
+description: "A closer look at Immortal Romance, the Microgaming vampire slot with 243 ways to win, before it joins The Ace of Games."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
     A look at the contender with a story to tell, before the contest begins.
