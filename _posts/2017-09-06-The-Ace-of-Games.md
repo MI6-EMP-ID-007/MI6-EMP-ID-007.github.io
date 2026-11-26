@@ -11,11 +11,11 @@ subtitle: |
 
 <h2>One Game will receive the grand title, we’ll tell you which one!</h2>
 
-Almost everybody knows that out of the thousands of Games on the Net some are more popular and pay out more wins. We have decided to set out and take it upon ourselves to find the best onlince Casino game in the world. Why would we try to tackle such a monumental task you ask? Read on and find out…
+Almost everybody knows that out of the thousands of Games on the Net some are more popular and pay out more wins. We have decided to set out and take it upon ourselves to find the best online Casino game in the world. Why would we try to tackle such a monumental task you ask? Read on and find out…
 <!--more-->
-Well, for one this journey gives us the opportunity to review a whole host of great games in a more in-depth manner thus allowing us to find out if these games deserve their popularity and their status as money makers. Another reason is that we get to examine the different models, online casinos and Software providers use to entice players and compare the results.
+Well, for one this journey gives us the opportunity to review a whole host of great games in a more in-depth manner thus allowing us to find out if these games deserve their popularity and their status as money makers. Another reason is that we get to examine the different models, online casinos and software providers use to entice players and compare the results.
 
-This kind of direct Comparison will unveil flaws in the games and systems of the different casinos, weed out the overhyped but underperforming online games as well as highlight the hidden gems of the online casino world. If you are as excited as we are to go on this journey, then keep checking back every week to read our review of the next contestant in the running for the Ace of Games Championship title.
+This kind of direct comparison will unveil flaws in the games and systems of the different casinos, weed out the overhyped but underperforming online games as well as highlight the hidden gems of the online casino world. If you are as excited as we are to go on this journey, then keep checking back every week to read our review of the next contestant in the running for the Ace of Games Championship title.
 
 But without further ado, let us jump right in and review our very first heavyweight of this competition.
 
@@ -27,16 +27,16 @@ The following game has long been a staple of the online Casino world and is wide
 {:.image.featured} 
 ![Thunderstruck II Bonus feature]({{"images/thunderstruck_II_golden_hall.jpg" | relative_url | strip_html}})
 
-As one of the most popular online Casino games of all time the original Thunderstruck quickly rose to stardom and became one of the most popular online Casino game titles of all time. Microgaming therefore decided to grace us all with a sequel and in 2010 released Thunderstruck II. As one of the very first video slots to feature Microgamings 243 Ways to win this truly electric slots-machine was hailed as the next big thing in online gaming.
+As one of the most popular online Casino games of all time the original Thunderstruck quickly rose to stardom and became one of the most popular online Casino game titles of all time. Microgaming therefore decided to grace us all with a sequel and in 2010 released Thunderstruck II. As one of the very first video slots to feature Microgaming's 243 Ways to win this truly electric slot machine was hailed as the next big thing in online gaming.
 
-And boy oh boy did it deliver! Thunderstruck II is fully deserving of it’s fame and glory. Because this slots game pays! As with all of Microgamings online Slots-Games the overall win percentage sits at about 97%, however Thor and his Nordic friends really go to work in the Bonus rounds. Big wins are definitely in the cards once you hit those wilds and use your free spins with multipliers of up to 5x.
+And boy oh boy did it deliver! Thunderstruck II is fully deserving of its fame and glory. Because this slots game pays! As with all of Microgaming's online slots games the overall win percentage sits at about 97%, however Thor and his Nordic friends really go to work in the Bonus rounds. Big wins are definitely in the cards once you hit those wilds and use your free spins with multipliers of up to 5x.
 
 {:.image.featured} 
 ![Thunderstruck II Big win]({{"images/thunderstruck_II_bigWin.jpg" | relative_url | strip_html}})
 
 We will probably come back to this bad boy once more in a later review as we didn’t really get into the stats of why the Thunderstruck II bonus feature is so fantastic. Neither did we discuss how you can be guaranteed to get the most out of this electrifying online video slots game.
 
-Check back soon to see more great game reviews, gaming tricks and tips that will see you finally cash-in at your favourite online Casino.
+Check back soon to see more great game reviews, gaming tricks and tips that will see you finally cash in at your favourite online Casino.
 
 
 Missed the build-up? Start with [The Rules of the Contest]({% post_url 2017-09-02-The-Ace-of-Games %}) and [Meet the Contenders]({% post_url 2017-09-04-The-Ace-of-Games %}).

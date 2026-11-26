@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Most popular Casinos
+title: Most Popular Casinos
 author: Andrew Morris
 topic: Casinos
 description: "What makes an online casino worth joining? The checklist we use to judge licences, games, payments, bonuses and support."
@@ -9,11 +9,11 @@ subtitle: |
     What makes a casino worth your time? Here is how we judge.
 ---
 
-What is the best Casino on the Net. This is an often asked question that has no easy answer. There are many different things that must be considered when wondering about which Casinos meet a satisfactory level of service and which fall short of the expectations one should have as a player.
+What is the best Casino on the Net? This is an often asked question that has no easy answer. There are many different things that must be considered when wondering about which Casinos meet a satisfactory level of service and which fall short of the expectations one should have as a player.
 
 <!--more-->
 
-There are definitely some established and popular Casinos out there, but are they really still good? Or are the newer more innovative Casinos actually preferable to the ones that have somehow stood the test of time. Are the up and comers the new top dog or is old and dependable still the best bet for players?
+There are definitely some established and popular Casinos out there, but are they really still good? Or are the newer, more innovative Casinos actually preferable to the ones that have somehow stood the test of time. Are the up and comers the new top dog or is old and dependable still the best bet for players?
 
 The honest answer is that there is no single best casino for everyone, and we would be suspicious of any site that names one without showing its working. So here is the checklist we use when we look at a casino. You can use it yourself too.
 

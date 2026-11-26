@@ -11,13 +11,13 @@
 										{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
 										<a href="{{ '/authors' | relative_url }}#{{ post.author | slugify }}" class="author">
 										<span class="name">{{ post.author }}</span>
-										<img src="{{ authorImg | relative_url}}" alt="{{post.author}}" /></a>
+										<img src="{{ authorImg | relative_url}}" alt="{{post.author}}"{% unless forloop.first %} loading="lazy"{% endunless %} /></a>
 									</div>
                                 				</header>
 								
                                 				{% assign headerImg = 'images/' | append:post.headerImg %}
 	                            				<a href="{{ post.url }}" class="image featured">
-                                				<img src="{{headerImg | relative_url}}" alt="{{post.title}}"></a>
+                                				<img src="{{headerImg | relative_url}}" alt="{{post.title}}"{% unless forloop.first %} loading="lazy"{% endunless %}></a>
                                 				{{ post.excerpt }}
                                 
                                 				<footer>

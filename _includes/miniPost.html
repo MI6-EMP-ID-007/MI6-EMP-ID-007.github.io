@@ -5,9 +5,9 @@
 		<time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 		<!-- Author Img -->
 		{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
-		<a href="{{ post.url }}" class="author"><img src="{{ authorImg | relative_url}}" alt="{{ post.author }}"></a>
+		<a href="{{ post.url }}" class="author"><img src="{{ authorImg | relative_url}}" alt="{{ post.author }}" loading="lazy"></a>
 	</header>
 	{% assign headerImg = 'images/' | append:post.headerImg %}
 	<a href="{{ post.url }}" class="image">
-	<img src="{{headerImg | relative_url}}" alt="{{post.title}}"></a>
+	<img src="{{headerImg | relative_url}}" alt="{{post.title}}" loading="lazy"></a>
 </article>

@@ -65,6 +65,15 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 41. `textilize` replaced with `strip` (the subtitles are plain text).
 - [x] 42. Removed the IE8/IE9 support: `html5shiv.js`, `respond.min.js`, `ie8.css`, `ie9.css`, their four conditional-comment lines in `head.html`, and two IE-only lines in `main.js` (the IE<=9 main/sidebar reorder and the placeholder polyfill). In `main.css` the 57 `-ms-` prefixed duplicates (`-ms-transition`, `-ms-transform`, `-ms-flex*`, `display: -ms-flex`, etc.) were removed; every one sat next to its standard version. The remaining IE-only rules (`@-ms-viewport`, `-ms-overflow-style`, `::-ms-expand`, `:-ms-input-placeholder`, `.formerize-placeholder`) were removed too. `main.css` now has no IE code. Left alone: the vendored `font-awesome.min.css` still carries its own IE font/filter fallbacks (see #48), and `util.js` still contains the unused placeholder polyfill function.
 
+- [x] 43. Removed 13 unused images that were duplicates or odd sizes: `images/favicon.ico` (identical to the root `favicon.ico`), `coming_soon_full.jpg` (grey generic placeholder), `GoldChest.png` (unused portrait copy of `GoldChest.jpg`), `Throne-PNG-Photo.png` (1.6 MB 3D render on white), `throne1.jpg` (distorted, stretched with side bars), and the template leftovers `avatar.jpg` (36x36), `logo.jpg` (81x80), `placeholder-logo.jpg` and `pic08` to `pic12` (51x51). Kept for possible later use: `golden-throne.jpg`, `throne2.jpg`, `meditation.jpg`, `thunderstruck_ii.jpg`, `Neteller_logo_logotype.png` (5800x1050, huge canvas for a logo; shrink it before using) and `pic01` to `pic07`.
+- [x] 44. Resized and recompressed: `bestCasino.jpg` 3000x1362, 823 KB to 1200x544, 162 KB; `comingSoon.jpg` 407 KB to 79 KB (same 800x533); and `sunset.jpg` (Hello post) 1920x1279, 249 KB to 1200x799, 113 KB. Same file names, so nothing else changed.
+- [x] 45. `loading="lazy"` added to the sidebar thumbnails and to post-preview images, except the first post on each page (so the top image is not delayed). Banner images on single pages stay eager as they are at the top.
+- [x] 46. Already fixed in round 2: pagination renders only 4 posts per page, so images of later pages are not downloaded on the homepage.
+- [x] 47. `defer` added to jQuery, skel, util and main.js in `head.html` (they still run in order, before the page finishes loading).
+- [x] 48. Font Awesome 4 (29 KB CSS plus six font files) replaced by `assets/css/icons.css` and a 2.4 KB subset font (`assets/fonts/fontawesome-subset.woff2`) with only the 13 glyphs the site uses (search, heart, comment, bars, twitter, facebook, instagram, rss, envelope, and the chevrons, check and chevron-down that `main.css` uses by code). The `@import` in `main.css` and the old font files were deleted. To add an icon later, add its code to the subset (`pyftsubset --unicodes=...`) and a rule in `icons.css`.
+- [x] 50. Typos fixed across all content and templates (posts, About, header, sidebar): "Your number one stop", "Tips and Tricks", "experiences", "professionals", "online", "The Web's best", "The world's No. 1", "its" for "it's" (3x in Best Bonuses, 1x in Round 1), "casino's opening offer", "don't", "Microgaming's", "casino players", "how most of the stuff works", "how-tos", "slot machine", "cash in", plus a few capitals, commas and a missing question mark and full stop (and "King of Deposits" / "Most Popular Casinos" in titles). I did not find "addage". Facebook and Twitter are now capitalised on About.
+- [x] 53. `_site/` removed from the repo (78 files). No `.gitignore` was added, as requested; if you build locally with Jekyll, `_site/` will reappear and must not be committed.
+
 ## Follow-ups from the fourth round
 
 - [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`).
@@ -77,6 +86,8 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Declined or not an issue
 
+- 51. "Casinocademy(Beta)" header: intentional, left as is.
+- 52. Content dated Sept 2017 and no year in the footer: leave for now, more content is coming.
 - 4. Cookie/consent banner: declined (site does not process cookies).
 - 6. Unsubstantiated claims review: declined (owner confirms the claims are accurate).
 
@@ -89,6 +100,8 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 ## Backend for interactive features (planned)
 
 Idea: one small hosted backend (a Salesforce Developer Edition org, or another free hosted database) called from the static site with JS. It would serve likes, comments, the "Most Popular" ranking (#7) and the contact form (B). Things to settle first: the site is public, so the browser can only hold a public endpoint, never a secret; the endpoint needs spam and abuse limits; Developer Edition orgs are for development and are deactivated if not logged into for a long period, so check Salesforce's current terms and API limits for production use; and pages must still work if the backend is down.
+
+- [ ] 49. Sidebar "Most Popular" and "Recent Posts" show nearly the same posts. This is only because there are few posts; revisit when more content exists (and with #7).
 
 ## Follow-ups from the first round
 
@@ -116,25 +129,8 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 ## Remaining issues, by priority
 
 
-### Medium: markup, accessibility, correctness
-
-
-### Medium: performance
-
-- [ ] 43. 24 unused images take 2.8 MB, including `Throne-PNG-Photo.png` (1.6 MB) and the `pic01`–`pic12` template stock images.
-- [ ] 44. `bestCasino.jpg` (823 KB) and `comingSoon.jpg` (407 KB) are served unresized. Use resized or WebP versions.
-- [ ] 45. No `loading="lazy"` on images.
-- [ ] 46. The homepage renders all 9 posts, including images on the hidden pages, so everything downloads up front.
-- [ ] 47. jQuery, skel, util load synchronously in `<head>` with no `defer`.
-- [ ] 48. Font Awesome 4 loads in full for 2 icons.
-- [ ] 49. Sidebar "Most Popular" and "Recent Posts" show nearly the same posts.
-
 ### Low: content polish and housekeeping
 
-- [ ] 50. Typos: "You number one stop" (sidebar and posts), "Tricks and Tricks", "exepriences", "proffesionals", "onlince", "Webs best", "worlds No.1", "addage", "it's" for "its", "Casinoplayers".
-- [ ] 51. Header reads "Casinocademy(Beta)" with no space.
-- [ ] 52. All content is from Sept 2017 and the footer has no year, so the site looks abandoned.
-- [ ] 53. `_site/` is committed to the repo. It duplicates the source, bloats diffs, and goes stale (GitHub Pages rebuilds it). Remove it and add a `.gitignore`.
 - [ ] 54. The repo is public, but the README says "unauthorized distribution prohibited" and there is no LICENSE file. Pick one.
 - [ ] 55. The author photo is the same image under the new name (`images/Authors/Andrew Morris.jpg`). Swap in the right image if needed.
 - [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist).
