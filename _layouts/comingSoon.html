@@ -26,12 +26,12 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">{{ page.title }}</a></h2>
-										<p>{{page.subtitle | textilize}}</p>
+										<h2>{{ page.title }}</h2>
+										<p>{{ page.subtitle | strip }}</p>
 									</div>
 								</header>
-								<span class="image featured"><img src={{"images/comingSoon.jpg" | relative_url}} alt="" /></span>
-								<p>{{ content }}</p>
+								<span class="image featured"><img src="{{'images/comingSoon.jpg' | relative_url}}" alt="The words Coming Soon written in chalk on a green blackboard" /></span>
+								{{ content }}
 							</article>
 
 					</div>

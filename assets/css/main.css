@@ -1391,14 +1391,6 @@
 
 /* Basic */
 
-	@-ms-viewport {
-		width: device-width;
-	}
-
-	body {
-		-ms-overflow-style: scrollbar;
-	}
-
 	@media screen and (max-width: 480px) {
 
 		html, body {
@@ -1414,11 +1406,9 @@
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
-			-ms-animation: none !important;
 			animation: none !important;
 			-moz-transition: none !important;
 			-webkit-transition: none !important;
-			-ms-transition: none !important;
 			transition: none !important;
 		}
 
@@ -1475,7 +1465,6 @@
 	a {
 		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
 		color: inherit;
@@ -1485,7 +1474,6 @@
 		a:before {
 			-moz-transition: color 0.2s ease;
 			-webkit-transition: color 0.2s ease;
-			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 		}
 
@@ -1615,19 +1603,15 @@
 	.author {
 		display: -moz-flex;
 		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: row;
 		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
 		flex-direction: row;
 		-moz-align-items: center;
 		-webkit-align-items: center;
-		-ms-align-items: center;
 		align-items: center;
 		-moz-justify-content: -moz-flex-end;
 		-webkit-justify-content: -webkit-flex-end;
-		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
 		border-bottom: 0;
 		font-family: "Raleway", Helvetica, sans-serif;
@@ -1641,7 +1625,6 @@
 		.author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
-			-ms-transition: border-bottom-color 0.2s ease;
 			transition: border-bottom-color 0.2s ease;
 			border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
 			display: block;
@@ -1702,11 +1685,9 @@
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
-		-ms-appearance: none;
 		appearance: none;
 		-moz-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 		-webkit-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-		-ms-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 		transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 		background-color: transparent;
 		border: 0;
@@ -1813,7 +1794,6 @@
 		.button:disabled {
 			-moz-pointer-events: none;
 			-webkit-pointer-events: none;
-			-ms-pointer-events: none;
 			pointer-events: none;
 			color: rgba(160, 160, 160, 0.3) !important;
 		}
@@ -1883,7 +1863,6 @@
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
-		-ms-appearance: none;
 		appearance: none;
 		background: rgba(160, 160, 160, 0.075);
 		border: none;
@@ -1945,10 +1924,6 @@
 			width: 2.75em;
 		}
 
-		.select-wrapper select::-ms-expand {
-			display: none;
-		}
-
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -1964,7 +1939,6 @@
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
-		-ms-appearance: none;
 		appearance: none;
 		display: block;
 		float: left;
@@ -2045,15 +2019,6 @@
 		opacity: 1.0;
 	}
 
-	:-ms-input-placeholder {
-		color: #aaaaaa !important;
-		opacity: 1.0;
-	}
-
-	.formerize-placeholder {
-		color: #aaaaaa !important;
-		opacity: 1.0;
-	}
 
 /* Icon */
 
@@ -2395,15 +2360,12 @@
 			ul.posts article {
 				display: -moz-flex;
 				display: -webkit-flex;
-				display: -ms-flex;
 				display: flex;
 				-moz-align-items: -moz-flex-start;
 				-webkit-align-items: -webkit-flex-start;
-				-ms-align-items: -ms-flex-start;
 				align-items: flex-start;
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
-				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
 			}
 
@@ -2421,9 +2383,7 @@
 				ul.posts article header {
 					-moz-flex-grow: 1;
 					-webkit-flex-grow: 1;
-					-ms-flex-grow: 1;
 					flex-grow: 1;
-					-ms-flex: 1;
 				}
 
 					ul.posts article header h3 {
@@ -2464,11 +2424,9 @@
 	.mini-post {
 		display: -moz-flex;
 		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: column-reverse;
 		-webkit-flex-direction: column-reverse;
-		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
 		background: #ffffff;
 		border: solid 1px rgba(160, 160, 160, 0.3);
@@ -2483,7 +2441,6 @@
 			.mini-post .image img {
 				-moz-transition: -moz-transform 0.2s ease-out;
 				-webkit-transition: -webkit-transform 0.2s ease-out;
-				-ms-transition: -ms-transform 0.2s ease-out;
 				transition: transform 0.2s ease-out;
 				width: 100%;
 			}
@@ -2491,7 +2448,6 @@
 			.mini-post .image:hover img {
 				-moz-transform: scale(1.05);
 				-webkit-transform: scale(1.05);
-				-ms-transform: scale(1.05);
 				transform: scale(1.05);
 			}
 
@@ -2501,7 +2457,6 @@
 			position: relative;
 			-moz-flex-grow: 1;
 			-webkit-flex-grow: 1;
-			-ms-flex-grow: 1;
 			flex-grow: 1;
 		}
 
@@ -2534,11 +2489,9 @@
 			.mini-posts {
 				display: -moz-flex;
 				display: -webkit-flex;
-				display: -ms-flex;
 				display: flex;
 				-moz-flex-wrap: wrap;
 				-webkit-flex-wrap: wrap;
-				-ms-flex-wrap: wrap;
 				flex-wrap: wrap;
 				width: calc(100% + 2em);
 			}
@@ -2581,7 +2534,6 @@
 		.post > header {
 			display: -moz-flex;
 			display: -webkit-flex;
-			display: -ms-flex;
 			display: flex;
 			border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 			left: -3em;
@@ -2593,9 +2545,7 @@
 			.post > header .title {
 				-moz-flex-grow: 1;
 				-webkit-flex-grow: 1;
-				-ms-flex-grow: 1;
 				flex-grow: 1;
-				-ms-flex: 1;
 				padding: 3.75em 3em 3.3em 3em;
 			}
 
@@ -2643,32 +2593,27 @@
 			.post > a.image.featured img {
 				-moz-transition: -moz-transform 0.2s ease-out;
 				-webkit-transition: -webkit-transform 0.2s ease-out;
-				-ms-transition: -ms-transform 0.2s ease-out;
 				transition: transform 0.2s ease-out;
 			}
 
 			.post > a.image.featured:hover img {
 				-moz-transform: scale(1.05);
 				-webkit-transform: scale(1.05);
-				-ms-transform: scale(1.05);
 				transform: scale(1.05);
 			}
 
 		.post > footer {
 			display: -moz-flex;
 			display: -webkit-flex;
-			display: -ms-flex;
 			display: flex;
 			-moz-align-items: center;
 			-webkit-align-items: center;
-			-ms-align-items: center;
 			align-items: center;
 		}
 
 			.post > footer .actions {
 				-moz-flex-grow: 1;
 				-webkit-flex-grow: 1;
-				-ms-flex-grow: 1;
 				flex-grow: 1;
 			}
 
@@ -2718,14 +2663,12 @@
 				.post > header {
 					-moz-flex-direction: column;
 					-webkit-flex-direction: column;
-					-ms-flex-direction: column;
 					flex-direction: column;
 					padding: 3.75em 3em 1.25em 3em ;
 					border-left: 0;
 				}
 
 					.post > header .title {
-						-ms-flex: 0 1 auto;
 						margin: 0 0 2em 0;
 						padding: 0;
 						text-align: center;
@@ -2734,15 +2677,12 @@
 					.post > header .meta {
 						-moz-align-items: center;
 						-webkit-align-items: center;
-						-ms-align-items: center;
 						align-items: center;
 						display: -moz-flex;
 						display: -webkit-flex;
-						display: -ms-flex;
 						display: flex;
 						-moz-justify-content: center;
 						-webkit-justify-content: center;
-						-ms-justify-content: center;
 						justify-content: center;
 						border-left: 0;
 						margin: 0 0 2em 0;
@@ -2772,7 +2712,6 @@
 						.post > header .meta .author {
 							-moz-flex-direction: row-reverse;
 							-webkit-flex-direction: row-reverse;
-							-ms-flex-direction: row-reverse;
 							flex-direction: row-reverse;
 							margin-bottom: 0;
 						}
@@ -2814,11 +2753,9 @@
 			.post > header .meta {
 				-moz-align-items: center;
 				-webkit-align-items: center;
-				-ms-align-items: center;
 				align-items: center;
 				-moz-flex-direction: column;
 				-webkit-flex-direction: column;
-				-ms-flex-direction: column;
 				flex-direction: column;
 			}
 
@@ -2841,11 +2778,9 @@
 			.post > footer {
 				-moz-align-items: stretch;
 				-webkit-align-items: stretch;
-				-ms-align-items: stretch;
 				align-items: stretch;
 				-moz-flex-direction: column-reverse;
 				-webkit-flex-direction: column-reverse;
-				-ms-flex-direction: column-reverse;
 				flex-direction: column-reverse;
 			}
 
@@ -2953,11 +2888,9 @@
 	#header {
 		display: -moz-flex;
 		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-justify-content: space-between;
 		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #ffffff;
 		border-bottom: solid 1px rgba(160, 160, 160, 0.3);
@@ -3000,7 +2933,6 @@
 		#header .links {
 			-moz-flex: 1;
 			-webkit-flex: 1;
-			-ms-flex: 1;
 			flex: 1;
 			border-left: solid 1px rgba(160, 160, 160, 0.3);
 			height: inherit;
@@ -3101,7 +3033,6 @@
 		#header #search {
 			-moz-transition: all 0.5s ease;
 			-webkit-transition: all 0.5s ease;
-			-ms-transition: all 0.5s ease;
 			transition: all 0.5s ease;
 			max-width: 0;
 			opacity: 0;
@@ -3150,15 +3081,12 @@
 	#wrapper {
 		display: -moz-flex;
 		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
 		-moz-flex-direction: row-reverse;
 		-webkit-flex-direction: row-reverse;
-		-ms-flex-direction: row-reverse;
 		flex-direction: row-reverse;
 		-moz-transition: opacity 0.5s ease;
 		-webkit-transition: opacity 0.5s ease;
-		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
 		margin: 0 auto;
 		max-width: 100%;
@@ -3204,9 +3132,7 @@
 	#main {
 		-moz-flex-grow: 1;
 		-webkit-flex-grow: 1;
-		-ms-flex-grow: 1;
 		flex-grow: 1;
-		-ms-flex: 1;
 		width: 100%;
 	}
 
@@ -3347,11 +3273,9 @@
 	#menu {
 		-moz-transform: translateX(25em);
 		-webkit-transform: translateX(25em);
-		-ms-transform: translateX(25em);
 		transform: translateX(25em);
 		-moz-transition: -moz-transform 0.5s ease, visibility 0.5s;
 		-webkit-transition: -webkit-transform 0.5s ease, visibility 0.5s;
-		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
 		background: #ffffff;
@@ -3401,7 +3325,6 @@
 					#menu .links > li a h3 {
 						-moz-transition: color 0.2s ease;
 						-webkit-transition: color 0.2s ease;
-						-ms-transition: color 0.2s ease;
 						transition: color 0.2s ease;
 						font-size: 0.7em;
 					}
@@ -3429,7 +3352,6 @@
 		body.is-menu-visible #menu {
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
 			transform: translateX(0);
 			visibility: visible;
 		}

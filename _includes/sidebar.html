@@ -1,7 +1,7 @@
 				<!-- Sidebar -->
 					<section id="sidebar">
 							<section id="intro">
-									<a href="{{ '/' | relative_url }}" class="logo"><img src={{"images/CasinocademyLogo.png" | relative_url}} alt="CasinocademyLogo" /></a>
+									<a href="{{ '/' | relative_url }}" class="logo"><img src="{{'images/CasinocademyLogo.png' | relative_url}}" alt="CasinocademyLogo" /></a>
 									<header>
 										<h2><a href="{{ '/' | relative_url }}">Casinocademy</a></h2>
 										<p>You number one stop for online Casino Tips, Tricks and Hacks</p>
@@ -11,7 +11,7 @@
 							<section>
 								<header>
 									<h2> Most Popular</h2>
-									<p id="main"> Our Top Posts as voted for by you</p>
+									<p> Our Top Posts as voted for by you</p>
 								</header>
 								<div class="mini-posts">
 									{% for post in site.posts limit:4 %}
@@ -24,7 +24,7 @@
 							<section>
 								<header>
 									<h2>Recent Posts</h2>
-									<p id="main"> New Material to keep you winning!</p>
+									<p> New Material to keep you winning!</p>
 								</header>
 								<ul class="posts">
 									{% for post in site.posts limit:8 %}

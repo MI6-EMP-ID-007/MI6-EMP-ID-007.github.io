@@ -11,13 +11,13 @@
 										{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
 										<a href="{{ '/authors' | relative_url }}#{{ post.author | slugify }}" class="author">
 										<span class="name">{{ post.author }}</span>
-										<img src={{ authorImg | relative_url}} alt="{{post.author}}" /></a>
+										<img src="{{ authorImg | relative_url}}" alt="{{post.author}}" /></a>
 									</div>
                                 				</header>
 								
                                 				{% assign headerImg = 'images/' | append:post.headerImg %}
 	                            				<a href="{{ post.url }}" class="image featured">
-                                				<img src={{headerImg | relative_url}} alt="{{post.title}}"></a>
+                                				<img src="{{headerImg | relative_url}}" alt="{{post.title}}"></a>
                                 				{{ post.excerpt }}
                                 
                                 				<footer>
@@ -26,8 +26,8 @@
 									</ul>
 									<ul class="stats">
 										{% if post.topic %}{% assign topic_slug = post.topic | slugify %}<li><a href="{{ '/topics/' | append: topic_slug | append: '/' | relative_url }}">{{ post.topic }}</a></li>{% else %}<li><a href="{{ '/topics/' | relative_url }}">General</a></li>{% endif %}
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
+										<li><span class="icon fa-heart">28</span></li>
+										<li><span class="icon fa-comment">128</span></li>
 									</ul>
 								</footer>
 							</article>

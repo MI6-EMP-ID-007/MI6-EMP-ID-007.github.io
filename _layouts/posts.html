@@ -26,7 +26,7 @@
 								<header>
 									<div class="title">
 										<h2>{{ page.title }}</h2>
-										<p>{{page.subtitle | textilize}}</p>
+										<p>{{ page.subtitle | strip }}</p>
 									</div>
 									<div class="meta">
 										<!-- Post Date Stamp -->
@@ -40,14 +40,14 @@
 								</header>
 								{%- assign headerImg = 'images/' | append:page.headerImg -%}
 								<span class="image featured">
-								<img src={{ headerImg | relative_url}} alt="{{page.title}}" /></span>
-								<p>{{ content }}</p>
+								<img src="{{ headerImg | relative_url}}" alt="{{page.title}}" /></span>
+								{{ content }}
 								
 								<footer>
 									<ul class="stats">
 										{% if page.topic %}{% assign topic_slug = page.topic | slugify %}<li><a href="{{ '/topics/' | append: topic_slug | append: '/' | relative_url }}">{{ page.topic }}</a></li>{% else %}<li><a href="{{ '/topics/' | relative_url }}">General</a></li>{% endif %}
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
+										<li><span class="icon fa-heart">28</span></li>
+										<li><span class="icon fa-comment">128</span></li>
 									</ul>
 								</footer>
 							</article>

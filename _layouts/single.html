@@ -26,12 +26,12 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">{{ page.title }}</a></h2>
-										<p>{{page.subtitle | textilize}}</p>
+										<h2>{{ page.title }}</h2>
+										<p>{{ page.subtitle | strip }}</p>
 									</div>
 								</header>
-								<span class="image featured"><img src="{{ '/images/Casino.jpg' | relative_url }}" alt="" /></span>
-								<p>{{ content }}</p>
+								<span class="image featured"><img src="{{ '/images/Casino.jpg' | relative_url }}" alt="Rows of slot machines in a dimly lit casino" /></span>
+								{{ content }}
 							</article>
 
 					</div>

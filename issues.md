@@ -52,6 +52,19 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] R. Site name: `title:` in `_config.yml` is now "Casinocademy" instead of the domain. Page titles now end in "| Casinocademy" (e.g. "No. 1 Casino Academy | Casinocademy", "... (Page 2) | Casinocademy"), and the feed title, `og:site_name` and the WebSite structured data say "Casinocademy".
 - [x] H. Favicon fixed: the link was `href=/favicon.ico/>` unquoted, so browsers requested `/favicon.ico/` (404). It is now quoted and resolves to `/favicon.ico` (verified on every page type in Chrome).
 
+## Done in the sixth fix round
+
+- [x] 33. Fixed the `<img img src=…` typo in `miniPost.html`.
+- [x] 34. Sidebar thumbnail alt text is now `{{ post.author }}`.
+- [x] 35. The duplicate `id="main"` on the two sidebar `<p>` tags was removed. Only `div#main` remains.
+- [x] 36. `<p>{{ content }}</p>` is now plain `{{ content }}` in all four layouts (it was a leftover placeholder; Markdown already supplies its own paragraphs, so the output had nested `<p>` tags).
+- [x] 37. All unquoted `src=`/`href=` attributes in `_includes/` and `_layouts/` are quoted (also `class=author`).
+- [x] 38. Banner images have alt text: "Rows of slot machines in a dimly lit casino" (`single.html`) and "The words Coming Soon written in chalk on a green blackboard" (`comingSoon.html`).
+- [x] 39. Checked: the contact form's fields all have `<label for>`, the submit button has a value and both search inputs have `aria-label`. Nothing to add.
+- [x] 40. `<a href="#">` removed from the page-title `<h2>` in `single.html` and `comingSoon.html`, and the fake like/comment counters are now `<span>`s (they did nothing; their numbers are still pinned #7). Not changed: the footer Twitter/Facebook icons (pinned #11) and the search/menu `#search`/`#menu` links, which the theme's script needs.
+- [x] 41. `textilize` replaced with `strip` (the subtitles are plain text).
+- [x] 42. Removed the IE8/IE9 support: `html5shiv.js`, `respond.min.js`, `ie8.css`, `ie9.css`, their four conditional-comment lines in `head.html`, and two IE-only lines in `main.js` (the IE<=9 main/sidebar reorder and the placeholder polyfill). In `main.css` the 57 `-ms-` prefixed duplicates (`-ms-transition`, `-ms-transform`, `-ms-flex*`, `display: -ms-flex`, etc.) were removed; every one sat next to its standard version. The remaining IE-only rules (`@-ms-viewport`, `-ms-overflow-style`, `::-ms-expand`, `:-ms-input-placeholder`, `.formerize-placeholder`) were removed too. `main.css` now has no IE code. Left alone: the vendored `font-awesome.min.css` still carries its own IE font/filter fallbacks (see #48), and `util.js` still contains the unused placeholder polyfill function.
+
 ## Follow-ups from the fourth round
 
 - [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`).
@@ -69,9 +82,13 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Pinned (decide later)
 
-- [ ] 7. Fake engagement numbers: every post shows a hard-coded "28 likes / 128 comments", and "Most Popular, as voted by you" is just the 4 newest posts.
+- [ ] 7. Fake engagement numbers: every post shows a hard-coded "28 likes / 128 comments", and "Most Popular, as voted by you" is just the 4 newest posts. **Decision: keep them and make them real** by loading counts from a hosted backend via a JS API call (see "Backend" below). Do not remove the counters.
 - [ ] 11. Twitter and Facebook footer icons link to `#`, and the About page asks visitors to follow you there.
 - [ ] 13. 3 of the 5 nav items (Casino Rankings, Bonus Rankings, and formerly Authors) go to the same "coming soon" page, and its browser title is the raw text `comingSoon`.
+
+## Backend for interactive features (planned)
+
+Idea: one small hosted backend (a Salesforce Developer Edition org, or another free hosted database) called from the static site with JS. It would serve likes, comments, the "Most Popular" ranking (#7) and the contact form (B). Things to settle first: the site is public, so the browser can only hold a public endpoint, never a secret; the endpoint needs spam and abuse limits; Developer Edition orgs are for development and are deactivated if not logged into for a long period, so check Salesforce's current terms and API limits for production use; and pages must still work if the backend is down.
 
 ## Follow-ups from the first round
 
@@ -101,16 +118,6 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ### Medium: markup, accessibility, correctness
 
-- [ ] 33. `miniPost.html` has `<img img src=…`, a typo.
-- [ ] 34. Every sidebar thumbnail's alt text is hard-coded to "Andrew Morris" (`miniPost.html`). Should be `{{ post.author }}`.
-- [ ] 35. `id="main"` is used twice (`div#main` and `p#main` in the sidebar).
-- [ ] 36. `<p>{{ content }}</p>` in the layouts wraps block content in a paragraph (invalid HTML).
-- [ ] 37. Many attributes are unquoted, e.g. `src={{ … }}`; breaks on paths with spaces. (The favicon link was quoted in round 5; the rest remain.)
-- [ ] 38. `single.html`: the banner path now uses `relative_url` (fixed in round 3), but the alt text is still empty.
-- [ ] 39. (Search inputs now have `aria-label`.) Check the remaining form controls for labels once pages are added.
-- [ ] 40. `href="#"` used as a button in several places. Use `<button>` or remove.
-- [ ] 41. `textilize` filter is deprecated.
-- [ ] 42. IE8/IE9 shims (`html5shiv`, `respond`, `ie8.css`, `ie9.css`) are dead weight.
 
 ### Medium: performance
 
