@@ -60,6 +60,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] T. After the next deploy, run a page through the Facebook Sharing Debugger and LinkedIn Post Inspector (they cache previews) and Google's Rich Results Test to confirm the tags and structured data are read as intended.
 - [ ] U. Dates in `article:published_time` and the structured data carry the build machine's time zone offset. Set `timezone:` in `_config.yml` so it is the same wherever the site is built.
 - [ ] V. No `WebSite` search box in the structured data: it needs a URL-based search results page, which the client-side search does not have.
+- [ ] W. **Possible schema.org type-case quirk.** `jekyll-seo-tag` 2.8.0 (the version GitHub Pages provides) writes each post's `image` as `"@type": "imageObject"` (lowercase i) while writing its publisher logo as `ImageObject`. Schema.org types are case-sensitive. Run a post through Google's Rich Results Test (see T). If it flags the image, the fix is to hand-write the `BlogPosting` block in `_layouts/posts.html` and stop using the plugin's structured data for posts (the plugin has no switch to turn off only its JSON-LD, so that would mean dropping the plugin and writing the canonical, Open Graph and Twitter tags by hand).
 
 ## Declined or not an issue
 
