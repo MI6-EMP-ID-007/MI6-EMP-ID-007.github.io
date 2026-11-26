@@ -47,11 +47,15 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 29. Structured data added: `BlogPosting` for each post (headline, author, dates, image), `WebSite` for the homepage, `WebPage` for other pages, and a hand-written `Organization` block (Casinocademy plus the hat logo) on every page. The plugin would have named the publisher after the post's author, so no `logo:` is set in `_config.yml` and the Organization is described in `_includes/head.html` instead. Do not add `logo:` to the config.
 - [x] 25 (update). Meta descriptions are now written by `jekyll-seo-tag`: `description:` front matter first, then the post excerpt, then the site description. The earlier hand-made fallback in `head.html` was removed.
 
+## Done in the fifth fix round
+
+- [x] R. Site name: `title:` in `_config.yml` is now "Casinocademy" instead of the domain. Page titles now end in "| Casinocademy" (e.g. "No. 1 Casino Academy | Casinocademy", "... (Page 2) | Casinocademy"), and the feed title, `og:site_name` and the WebSite structured data say "Casinocademy".
+- [x] H. Favicon fixed: the link was `href=/favicon.ico/>` unquoted, so browsers requested `/favicon.ico/` (404). It is now quoted and resolves to `/favicon.ico` (verified on every page type in Chrome).
+
 ## Follow-ups from the fourth round
 
 - [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`).
 - [ ] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews.
-- [ ] R. **Site name.** The Organization is named "Casinocademy" but `title:` in `_config.yml` is the domain `casinocademy.com`, which feeds `og:site_name`, the WebSite name, the feed title and every `<title>` suffix. Consider changing `title:` to "Casinocademy".
 - [ ] S. `locale` is set to `en_GB` because the copy uses British spelling. Change it if the audience is mainly US.
 - [ ] T. After the next deploy, run a page through the Facebook Sharing Debugger and LinkedIn Post Inspector (they cache previews) and Google's Rich Results Test to confirm the tags and structured data are read as intended.
 - [ ] U. Dates in `article:published_time` and the structured data carry the build machine's time zone offset. Set `timezone:` in `_config.yml` so it is the same wherever the site is built.
@@ -80,7 +84,6 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 - [ ] F. **Verify the game facts** in the new Ace of Games posts. They were written from general knowledge, not checked against the providers' documentation: provider attributions (Microgaming: Thunderstruck II, Immortal Romance, Mega Moolah; NetEnt: Starburst, Gonzo's Quest; Play'n GO: Book of Dead), 243 ways for Thunderstruck II and Immortal Romance, Immortal Romance's 2011 launch, its four characters, the Chamber of Spins and the Wild Desire feature, and the volatility descriptions.
 - [ ] G. When Casino Rankings and Bonus Rankings launch, replace the `/comingSoon` links in Best Bonuses and Most Popular Casinos.
-- [ ] H. **Favicon is probably not loading.** `_includes/head.html` has `href=/favicon.ico/>` unquoted, so browsers request `/favicon.ico/`, which returns 404 on the live site. Quote the attribute (part of #37).
 - [ ] I. Four of the Ace of Games posts share one header image (`theAceOfGamesGeneric.jpg`), which looks repetitive in "Most Popular" and on the homepage. Give each post its own image.
 - [ ] J. Old pages page-count mapping (`page1.html`, `page2.html`) assumes the current post count. Harmless, but it will not change if more posts are added.
 
@@ -101,7 +104,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [ ] 34. Every sidebar thumbnail's alt text is hard-coded to "Andrew Morris" (`miniPost.html`). Should be `{{ post.author }}`.
 - [ ] 35. `id="main"` is used twice (`div#main` and `p#main` in the sidebar).
 - [ ] 36. `<p>{{ content }}</p>` in the layouts wraps block content in a paragraph (invalid HTML).
-- [ ] 37. Many attributes are unquoted, e.g. `src={{ … }}`; breaks on paths with spaces.
+- [ ] 37. Many attributes are unquoted, e.g. `src={{ … }}`; breaks on paths with spaces. (The favicon link was quoted in round 5; the rest remain.)
 - [ ] 38. `single.html`: the banner path now uses `relative_url` (fixed in round 3), but the alt text is still empty.
 - [ ] 39. (Search inputs now have `aria-label`.) Check the remaining form controls for labels once pages are added.
 - [ ] 40. `href="#"` used as a button in several places. Use `<button>` or remove.
