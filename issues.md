@@ -33,7 +33,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 ## Done in the third fix round
 
 - [x] 23. Added `jekyll-sitemap` and `jekyll-feed` (both supported by GitHub Pages) and a `robots.txt`. The sitemap lists 25 URLs (no redirect stubs, 404 or search index), the feed has all 9 posts, and the feed is advertised in every page's `<head>`.
-- [x] 25. Wrote a meta description for every page and post (all under 160 characters). Pages and posts set `description:` in their front matter. If one is missing, `head.html` falls back to the post's excerpt, then to the site description.
+- [x] 25. Wrote a meta description for every page and post (all under 160 characters), set as `description:` in their front matter (output now handled by `jekyll-seo-tag`, see the fourth round).
 - [x] 26. Removed the obsolete `keywords` meta tag.
 - [x] 27. Added `lang="en"` to every page (driven by `lang` in `_config.yml`).
 - [x] 28. Custom 404 page ("Snake Eyes! This page folded before we could show you its hand.") in `404.md`.
@@ -41,13 +41,21 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 31. `_config.yml` now has `url`, `baseurl`, `lang` and `description`.
 - [x] 32. Added per-author pages (`/authors/andrew-morris/`, `/authors/abigail-benson/`) and per-topic pages (`/topics/`, `/topics/games/`, `bonuses`, `payments`, `casinos`, `site-news`). The post footers' dead "General" link now goes to the post's topic. The About page links the authors page, both author pages, the topics index and every topic. The /authors page now links to each author's own page instead of listing their posts.
 
-## Explained, decision pending
+## Done in the fourth fix round
 
-- [ ] 24. **Canonical and social sharing tags.** Explained to the owner; not implemented yet.
-  - A *canonical* tag tells search engines which URL is the official one when the same content can be reached several ways (http/https, `/about` vs `/about.html`, paginated pages). It stops ranking signals being split.
-  - *Open Graph / Twitter card* tags give Facebook, LinkedIn, WhatsApp, Slack and X a title, description and image for link previews. Without them, shared links often look bare.
-  - Fix options: (a) add the `jekyll-seo-tag` plugin and `{% seo %}` to `head.html`, which also covers #29. It would replace the description logic added for #25, so the `description:` front matter stays but `head.html`'s own `<title>` and description lines would go; or (b) hand-write about a dozen lines in `head.html`. Needs a default share image and, optionally, a Twitter handle.
-- [ ] 29. **Structured data.** Explained to the owner; not implemented yet. It is a small block of machine-readable JSON-LD (schema.org vocabulary) in the page head describing what the page is: an `Article` (headline, author, dates, image), the `Organization` (name, logo, URL), and the `WebSite` (including its search box). It helps search engines understand who is behind the site and can enable richer search listings. It is not a ranking guarantee. Do not add review or rating markup without real reviews. Fixed by the same `jekyll-seo-tag` plugin as #24, or by hand in `_layouts/posts.html`.
+- [x] 24. Canonical, Open Graph and Twitter card tags added with the `jekyll-seo-tag` plugin (the standard Jekyll/GitHub Pages approach). Every page gets one canonical URL, `og:` tags and a `summary_large_image` Twitter card. The share image is the hat logo placed on the site's light grey in a 1200x630 canvas (`images/CasinocademyShare.png`, so a transparent black logo does not vanish on dark previews). It is set for all pages in `_config.yml` (`defaults:`) and a page or post can override it with its own `image:`. Our own `<title>` lines are kept (`{% seo title=false %}`), so paginated pages still say "(Page 2)".
+- [x] 29. Structured data added: `BlogPosting` for each post (headline, author, dates, image), `WebSite` for the homepage, `WebPage` for other pages, and a hand-written `Organization` block (Casinocademy plus the hat logo) on every page. The plugin would have named the publisher after the post's author, so no `logo:` is set in `_config.yml` and the Organization is described in `_includes/head.html` instead. Do not add `logo:` to the config.
+- [x] 25 (update). Meta descriptions are now written by `jekyll-seo-tag`: `description:` front matter first, then the post excerpt, then the site description. The earlier hand-made fallback in `head.html` was removed.
+
+## Follow-ups from the fourth round
+
+- [ ] P. **Twitter/X handle and social profiles.** When accounts exist, add `twitter: username:` to `_config.yml` and a `sameAs` list to the Organization block in `head.html` (also see pinned #11, footer icons still link to `#`).
+- [ ] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews.
+- [ ] R. **Site name.** The Organization is named "Casinocademy" but `title:` in `_config.yml` is the domain `casinocademy.com`, which feeds `og:site_name`, the WebSite name, the feed title and every `<title>` suffix. Consider changing `title:` to "Casinocademy".
+- [ ] S. `locale` is set to `en_GB` because the copy uses British spelling. Change it if the audience is mainly US.
+- [ ] T. After the next deploy, run a page through the Facebook Sharing Debugger and LinkedIn Post Inspector (they cache previews) and Google's Rich Results Test to confirm the tags and structured data are read as intended.
+- [ ] U. Dates in `article:published_time` and the structured data carry the build machine's time zone offset. Set `timezone:` in `_config.yml` so it is the same wherever the site is built.
+- [ ] V. No `WebSite` search box in the structured data: it needs a URL-based search results page, which the client-side search does not have.
 
 ## Declined or not an issue
 

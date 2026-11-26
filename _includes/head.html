@@ -1,7 +1,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{%- assign meta_description = page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 | default: site.description -%}
-		<meta name="description" content="{{ meta_description | escape }}" />
+		{% seo title=false %}
+		<!-- Organization structured data (jekyll-seo-tag would label the publisher with the post author's name, so it is described here instead) -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "@id": {{ "/#organization" | absolute_url | jsonify }},
+		  "name": "Casinocademy",
+		  "url": {{ "/" | absolute_url | jsonify }},
+		  "logo": {
+		    "@type": "ImageObject",
+		    "url": {{ "/images/CasinocademyLogo.png" | absolute_url | jsonify }},
+		    "width": 449,
+		    "height": 449
+		  }
+		}
+		</script>
 		{% feed_meta %}
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 			<link rel="stylesheet" href={{"assets/css/main.css" | relative_url}} />
