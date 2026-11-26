@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Best Bonuses
-author: Thulani Mbatha
+author: Andrew Morris
 headerImg: GoldChest.jpg
 subtitle: |
     The best Bonuses in the Online Casino world laid out for you

@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: King of deposits Pt. 1 - Introduction
-author: Thulani Mbatha
+author: Andrew Morris
 headerImg: Casino.jpg
 subtitle: |
     One method to rule them all!
