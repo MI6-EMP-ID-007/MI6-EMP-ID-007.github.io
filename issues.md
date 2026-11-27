@@ -74,6 +74,18 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 54. Repo stays public. Added a `LICENSE` (all rights reserved, with a note that the HTML5 UP template keeps its own CC BY 3.0 licence) and updated the README to match.
 - [x] 55. Andrew Morris now uses a generated "AM" initials avatar (`images/Authors/andrew-morris.svg`). Swap in a real image when one is found; the old `Andrew Morris.jpg` is still in the repo, unused.
 
+## Done in the sixth fix round
+
+- [x] Closed follow-ups A, B, D, F, G, I, K, L, M, Q, S, E, J and V (see the notes on each below).
+- [x] C. GA4 is live: the published GTM container now contains a Google tag for `G-PCT50DJQYC`.
+- [x] N, O, U, L fixed (page 2+ descriptions, README/`redirects.json` excluded, `timezone: UTC`, footer "Topics" link).
+- [x] Added "The Ace of Games, Round 2: Mega Moolah" (no game screenshots yet, see D/I/Q).
+- [x] 54. `LICENSE` (all rights reserved) added, 55. Andrew Morris avatar. (Both in the fifth round list above.)
+
+## Done in the seventh fix round
+
+- [x] 4. Cookie/consent banner (earlier declined because the site set no cookies; reopened now that GA4 runs through GTM and sets `_ga` cookies). A banner (`assets/js/consent.js`, styles in `custom.css`) with equally prominent Accept and Reject buttons. GTM, and with it GA4, only loads after Accept; Google Consent Mode defaults are all denied. Reject (or withdrawing later) deletes the GA cookies and reloads the page if GTM was already running. The choice is stored in `localStorage` (`cc_consent_v1`), and a footer "Cookie settings" link reopens the banner. The GTM `<noscript>` iframe was removed from `homepage.html`, because a visitor without JavaScript cannot consent (it was the only layout that had one).
+
 ## Follow-ups from the fourth round
 
 - [x] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews. **Closed: see D.**
@@ -86,7 +98,6 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 - 51. "Casinocademy(Beta)" header: intentional, left as is.
 - 52. Content dated Sept 2017 and no year in the footer: leave for now, more content is coming.
-- 4. Cookie/consent banner: declined (site does not process cookies).
 - 6. Unsubstantiated claims review: declined (owner confirms the claims are accurate).
 
 ## Pinned (decide later)
@@ -131,6 +142,10 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ## Remaining issues, by priority
 
+
+### High (needed before going live)
+
+- [ ] 59. No privacy policy page. The consent banner links to one automatically once `privacy_url:` is set in `_config.yml` (e.g. `privacy_url: /privacy/`). It should cover GA4/GTM, the data transfer to the USA, and the consent storage.
 
 ### Low: content polish and housekeeping
 
