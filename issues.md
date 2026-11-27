@@ -72,7 +72,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 - [x] 50. Typos fixed across all content and templates (posts, About, header, sidebar): "Your number one stop", "Tips and Tricks", "experiences", "professionals", "online", "The Web's best", "The world's No. 1", "its" for "it's" (3x in Best Bonuses, 1x in Round 1), "casino's opening offer", "don't", "Microgaming's", "casino players", "how most of the stuff works", "how-tos", "slot machine", "cash in", plus a few capitals, commas and a missing question mark and full stop (and "King of Deposits" / "Most Popular Casinos" in titles). I did not find "addage". Facebook and Twitter are now capitalised on About.
 - [x] 53. `_site/` removed from the repo (78 files). No `.gitignore` was added, as requested; if you build locally with Jekyll, `_site/` will reappear and must not be committed.
 - [x] 54. Repo stays public. Added a `LICENSE` (all rights reserved, with a note that the HTML5 UP template keeps its own CC BY 3.0 licence) and updated the README to match.
-- [x] 55. Andrew Morris now uses a generated "AM" initials avatar (`images/Authors/andrew-morris.svg`). Swap in a real image when one is found; the old `Andrew Morris.jpg` is still in the repo, unused.
+- [x] 55. Real author photos added for both authors (`images/Authors/andrew-morris.jpg`, `abigail-benson.jpg`, resized to 300 px). The layouts now read the photo from `_data/authors.yml` instead of building the file name from the author's name, so a new author only needs an entry there. The old initials SVGs and `Andrew Morris.jpg` are removed.
 
 ## Done in the sixth fix round
 
@@ -85,6 +85,10 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 ## Done in the seventh fix round
 
 - [x] 4. Cookie/consent banner (earlier declined because the site set no cookies; reopened now that GA4 runs through GTM and sets `_ga` cookies). A banner (`assets/js/consent.js`, styles in `custom.css`) with equally prominent Accept and Reject buttons. GTM, and with it GA4, only loads after Accept; Google Consent Mode defaults are all denied. Reject (or withdrawing later) deletes the GA cookies and reloads the page if GTM was already running. The choice is stored in `localStorage` (`cc_consent_v1`), and a footer "Cookie settings" link reopens the banner. The GTM `<noscript>` iframe was removed from `homepage.html`, because a visitor without JavaScript cannot consent (it was the only layout that had one).
+
+## Done in the eighth fix round
+
+- [x] Real author photos for Andrew Morris and Abigail Benson (updates #55 and A). Post, sidebar and author pages now read the photo from `_data/authors.yml`.
 
 ## Follow-ups from the fourth round
 
@@ -119,7 +123,7 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ## Follow-ups from the first round
 
-- [x] A. **Abigail Benson's bio and avatar are placeholders.** The bio text is a draft and the avatar is a generated "AB" initials image (`images/Authors/abigail-benson.svg`). Replace both with real content. Andrew Morris's bio is based on the existing posts; review it too. **Closed: owner will supply real bios and avatars.**
+- [x] A. **Abigail Benson's bio and avatar are placeholders.** The bio text is a draft and the avatar is a generated "AB" initials image (`images/Authors/abigail-benson.svg`). Replace both with real content. Andrew Morris's bio is based on the existing posts; review it too. **Closed: owner will supply real bios and avatars.** Photos added in round 7 (see #55).
 - [x] B. **Contact form is `mailto:`-based.** Visitors without an email app configured (common on shared or work computers) can't send anything; the page also shows the address as a fallback. If that becomes a problem, the alternatives are a form service or a small serverless function. **Closed: handled by #56 (pinned).**
 - [x] C. **Check GA4 exists inside the GTM container** `GTM-MS9J2KH`. With the UA tag gone, analytics only works if GTM has a GA4 tag. **Done: the published GTM container now contains a Google tag for GA4 measurement ID `G-PCT50DJQYC` (verified in the live `gtm.js`). First data should show in GA4 Realtime.**
 - [x] D. `_layouts/single.html` shows the same `Casino.jpg` banner on Authors and Contact. Let pages set their own header image, or drop it for utility pages. **Closed: banner images will be revisited later (with I, M, Q).**

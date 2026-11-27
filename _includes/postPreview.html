@@ -8,7 +8,8 @@
 										<!-- Post Date Stamp -->
 										<time class="published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 										<!-- Author Metadata (Name, Img, Link) -->
-										{% assign authorImg = 'images/Authors/' | append:post.author | append:".jpg" %}
+										{% assign author_data = site.data.authors | where: "name", post.author | first %}
+										{% assign authorImg = '/images/' | append: author_data.photo %}
 										<a href="{{ '/authors' | relative_url }}#{{ post.author | slugify }}" class="author">
 										<span class="name">{{ post.author }}</span>
 										<img src="{{ authorImg | relative_url}}" alt="{{post.author}}"{% unless forloop.first %} loading="lazy"{% endunless %} /></a>
