@@ -90,6 +90,10 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 - [x] Real author photos for Andrew Morris and Abigail Benson (updates #55 and A). Post, sidebar and author pages now read the photo from `_data/authors.yml`.
 
+## Done in the ninth fix round
+
+- [x] 7. Likes and comments counters removed (see the note on 7 below). Sidebar tagline no longer claims posts are voted for.
+
 ## Follow-ups from the fourth round
 
 - [x] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews. **Closed: see D.**
@@ -106,7 +110,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Pinned (decide later)
 
-- [ ] 7. Fake engagement numbers: every post shows a hard-coded "28 likes / 128 comments", and "Most Popular, as voted by you" is just the 4 newest posts. **Decision: keep them and make them real** by loading counts from a hosted backend via a JS API call (see "Backend" below). Do not remove the counters.
+- [x] 7. Fake engagement numbers. **Superseded 2026-11-28: the likes and comments counters were removed from the site** (post pages and homepage cards; the heart and comment icon styles too), so there is nothing fake left to replace with a backend. The sidebar tagline "as voted for by you" was changed to "Our top posts". The "Most Popular" heading is still just the 4 newest posts (see 49).
 - [ ] 11. Twitter and Facebook footer icons link to `#`, and the About page asks visitors to follow you there.
 - [ ] 13. 3 of the 5 nav items (Casino Rankings, Bonus Rankings, and formerly Authors) go to the same "coming soon" page, and its browser title is the raw text `comingSoon`.
 - [ ] 56. Test that `support@casinocademy.com` receives mail (MX and SPF records exist). **Pinned: tackle with the better contact form (B).**
@@ -117,7 +121,7 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Backend for interactive features (planned)
 
-Idea: one small hosted backend (a Salesforce Developer Edition org, or another free hosted database) called from the static site with JS. It would serve likes, comments, the "Most Popular" ranking (#7) and the contact form (B). Things to settle first: the site is public, so the browser can only hold a public endpoint, never a secret; the endpoint needs spam and abuse limits; Developer Edition orgs are for development and are deactivated if not logged into for a long period, so check Salesforce's current terms and API limits for production use; and pages must still work if the backend is down.
+Idea: one small hosted backend (a Salesforce Developer Edition org, or another free hosted database) called from the static site with JS. It could serve a real "Most Popular" ranking and the contact form (B). Likes and comments were dropped in round 9, so they are no longer part of the plan. Things to settle first: the site is public, so the browser can only hold a public endpoint, never a secret; the endpoint needs spam and abuse limits; Developer Edition orgs are for development and are deactivated if not logged into for a long period, so check Salesforce's current terms and API limits for production use; and pages must still work if the backend is down.
 
 - [ ] 49. Sidebar "Most Popular" and "Recent Posts" show nearly the same posts. This is only because there are few posts; revisit when more content exists (and with #7).
 

@@ -11,8 +11,6 @@
 }
 
 .fa-search:before { content: "\f002"; }
-.fa-heart:before { content: "\f004"; }
-.fa-comment:before { content: "\f075"; }
 .fa-bars:before { content: "\f0c9"; }
 .fa-twitter:before { content: "\f099"; }
 .fa-facebook:before { content: "\f09a"; }
