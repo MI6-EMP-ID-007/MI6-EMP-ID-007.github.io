@@ -94,6 +94,10 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 - [x] 7. Likes and comments counters removed (see the note on 7 below). Sidebar tagline no longer claims posts are voted for.
 
+## Done in the tenth fix round
+
+- [x] The Mega Moolah post (Round 2) is now by Abigail Benson and dated 5 Nov 2026 (file renamed to `_posts/2026-11-05-The-Ace-of-Games.md`; the old URL `/2017/09/07/The-Ace-of-Games.html` redirects to the new one). Her "first articles will appear here soon" line was removed from her bio.
+
 ## Follow-ups from the fourth round
 
 - [x] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews. **Closed: see D.**

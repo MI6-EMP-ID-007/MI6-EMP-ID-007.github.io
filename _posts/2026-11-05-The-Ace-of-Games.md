@@ -1,8 +1,10 @@
 ---
 layout: posts
 title: "The Ace of Games, Round 2: Mega Moolah"
-author: Andrew Morris
+author: Abigail Benson
 topic: Games
+redirect_from:
+  - /2017/09/07/The-Ace-of-Games.html
 description: "Round 2 of The Ace of Games: our review of Microgaming's Mega Moolah, its four progressive jackpots and what its low RTP means for you."
 headerImg: theAceOfGamesGeneric.jpg
 subtitle: |
