@@ -4,6 +4,7 @@ description: Casinocademy teaches online casino players how it all works, with p
 url: "https://casinocademy.com"
 baseurl: ""
 lang: en
+privacy_url: /privacy/
 timezone: UTC
 locale: en_GB
 excerpt_separator: <!--more-->

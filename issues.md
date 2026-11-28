@@ -98,6 +98,16 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 - [x] The Mega Moolah post (Round 2) is now by Abigail Benson and dated 5 Nov 2026 (file renamed to `_posts/2026-11-05-The-Ace-of-Games.md`; the old URL `/2017/09/07/The-Ace-of-Games.html` was removed, no redirect, and no links to it remain). Her "first articles will appear here soon" line was removed from her bio.
 
+## Done in the eleventh fix round
+
+- [x] 59. Privacy policy added at `/privacy/` (`privacy.md`). Linked from the footer, the contact page and the cookie banner. It describes Google Analytics (consent only), the consent flag in localStorage, Google Fonts, GitHub Pages hosting, the `mailto:` contact form, client-side search and data transfers to the USA.
+
+## Follow-ups from the eleventh round
+
+- [ ] X. **Google Fonts load before consent.** `assets/css/main.css` imports Source Sans Pro and Raleway from fonts.googleapis.com on every page, so Google receives each visitor's IP address regardless of the cookie choice (some EU authorities and courts treat that as personal data). The policy discloses it. The clean fix is to download the fonts into `assets/fonts/` and serve them from the site, which also speeds up the first paint.
+- [ ] Y. **Legal review of the policy.** It is a plain-English draft written from what the site actually does, not legal advice. Before launch, have it checked for your target countries, and add the legal entity name and a postal address if the law there requires one.
+- [ ] Z. **Set the Google Analytics data-retention period** (Admin, Data collection and modification, Data retention). The policy says retention is "a limited period that we set"; the default is 2 months, and it can be raised to 14.
+
 ## Follow-ups from the fourth round
 
 - [x] Q. Every page shares the same hat share image. Posts could use their own `headerImg` as a per-post `image:` for richer previews. **Closed: see D.**
@@ -157,7 +167,7 @@ Idea: one small hosted backend (a Salesforce Developer Edition org, or another f
 
 ### High (needed before going live)
 
-- [ ] 59. No privacy policy page. The consent banner links to one automatically once `privacy_url:` is set in `_config.yml` (e.g. `privacy_url: /privacy/`). It should cover GA4/GTM, the data transfer to the USA, and the consent storage.
+- [x] 59. No privacy policy page. The consent banner links to one automatically once `privacy_url:` is set in `_config.yml` (e.g. `privacy_url: /privacy/`). It should cover GA4/GTM, the data transfer to the USA, and the consent storage. **Done in round 11: `/privacy/` written and linked from the footer, the contact page and the cookie banner (`privacy_url` in `_config.yml`).**
 
 ### Low: content polish and housekeeping
 

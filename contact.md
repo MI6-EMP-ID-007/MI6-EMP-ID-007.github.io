@@ -26,5 +26,5 @@ subtitle: |
 		</div>
 	</div>
 </form>
-<p class="form-note">Sending opens your email app with this message ready to go, addressed to <a href="mailto:support@casinocademy.com">support@casinocademy.com</a>. Press send there to deliver it.</p>
+<p class="form-note">Sending opens your email app with this message ready to go, addressed to <a href="mailto:support@casinocademy.com">support@casinocademy.com</a>. Press send there to deliver it. How we handle your details is in our <a href="/privacy/">privacy policy</a>.</p>
 <script src="{{ '/assets/js/contact.js' | relative_url }}"></script>
