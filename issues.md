@@ -104,9 +104,13 @@ This file is excluded from the built site (`exclude:` in `_config.yml`).
 
 ## Follow-ups from the eleventh round
 
-- [ ] X. **Google Fonts load before consent.** `assets/css/main.css` imports Source Sans Pro and Raleway from fonts.googleapis.com on every page, so Google receives each visitor's IP address regardless of the cookie choice (some EU authorities and courts treat that as personal data). The policy discloses it. The clean fix is to download the fonts into `assets/fonts/` and serve them from the site, which also speeds up the first paint.
-- [ ] Y. **Legal review of the policy.** It is a plain-English draft written from what the site actually does, not legal advice. Before launch, have it checked for your target countries, and add the legal entity name and a postal address if the law there requires one.
-- [ ] Z. **Set the Google Analytics data-retention period** (Admin, Data collection and modification, Data retention). The policy says retention is "a limited period that we set"; the default is 2 months, and it can be raised to 14.
+- [x] X. **Google Fonts self-hosted (round 12).** The `@import` of fonts.googleapis.com was removed from `assets/css/main.css`. Source Sans Pro (400, 700) and Raleway (400, 800, 900) now load from `assets/fonts/` through `assets/css/fonts.css` (latin and latin-ext only, `font-display: swap`; Raleway is one variable file declared at the three weights the theme used). A before/after screenshot of the homepage is pixel-identical, and a network trace shows no request to Google font hosts. The privacy policy says the fonts come from our own site.
+- [x] Y. **Legal review of the policy.** It is a plain-English draft written from what the site actually does, not legal advice. Before launch, have it checked for your target countries, and add the legal entity name and a postal address if the law there requires one. **Closed: owner will not pursue.**
+- [x] Z. **Set the Google Analytics data-retention period** (Admin, Data collection and modification, Data retention). The policy says retention is "a limited period that we set"; the default is 2 months, and it can be raised to 14. **Closed: owner will not pursue.**
+
+## Done in the twelfth fix round
+
+- [x] X. Google Fonts self-hosted (details under the eleventh-round follow-ups). Y and Z closed by the owner.
 
 ## Follow-ups from the fourth round
 

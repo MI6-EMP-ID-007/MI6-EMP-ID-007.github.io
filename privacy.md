@@ -19,7 +19,7 @@ Casinocademy publishes guides about online casino games, bonuses and payment met
 
 **Your cookie choice.** We save your Accept or Reject choice in your browser's local storage under the name `cc_consent_v1`, so we do not ask again on every page. It stays on your device and is never sent to us. You can change your mind at any time with the <a href="#" role="button" data-cookie-settings>Cookie settings</a> link here or at the bottom of any page.
 
-**Fonts.** The site's text fonts are loaded from Google Fonts, so your browser connects to Google's servers when a page loads and Google receives your IP address. This happens whatever your cookie choice, because the fonts are needed to display the page.
+**Fonts.** The site's text fonts are served from our own site, so displaying them does not contact Google or anyone else.
 
 **Hosting.** The site is hosted by GitHub Pages (GitHub, Inc.). Like any web host, GitHub may log technical information such as your IP address and the pages requested, for security and to run the service. See [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) for how it handles that data.
 
